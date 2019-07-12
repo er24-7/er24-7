@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,27 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/users">Users</a>
+    <a href="/shifts">Shifts</a>
+  </nav>
 
   {{{body}}}
 
+  {{#if yay}}
+  <div class="success-message message">{{yay}}</div>
+  {{/if}}
+
+  {{#if err}}
+  <div class="error-message message">{{err}}</div>
+  {{/if}}
+
+  <div class="message">Test message</div>
+
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>

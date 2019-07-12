@@ -57,7 +57,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'ER24-7';
 
 app.use(session({
-  secret: "shhhhh-super-secret",
+  secret: "secret",
   resave: true,
   saveUninitialized: true
 }));
@@ -110,11 +110,11 @@ app.use((req, res, next) => {
 const indexRouteVar = require('./routes/index');
 app.use('/', indexRouteVar);
 
-// const userRouteVar = require('./routes/user-routes');
-// app.use('/', userRouteVar);
+const userRouteVar = require('./routes/user-routes');
+app.use('/users', userRouteVar);
 
-// const shiftRouteVar = require('./routes/shift-routes');
-// app.use('/', shiftRouteVar);
+const shiftRouteVar = require('./routes/shift-routes');
+app.use('/shifts', shiftRouteVar);
 
 
 module.exports = app;
