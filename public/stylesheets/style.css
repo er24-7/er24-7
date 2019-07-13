@@ -28,11 +28,23 @@ nav {
 
 .logo {
   margin-left: 2rem;
+  width: 84.3px;
   border-bottom: 4px solid rgba(231, 54, 23, 0.685);
   color: #505050;
   height: 60px;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -.27rem; }
+
+.logo:hover {
+  color: black;
+  border-bottom: 4px solid #af3621;
+  transition: all .8s; }
+
+.dot {
+  color: #af3621; }
+
+.seven {
+  letter-spacing: -0.6rem; }
 
 /*# sourceMappingURL=style.css.map */
