@@ -118,7 +118,28 @@ section {
   width: 250px;
   margin-top: 5px;
   padding-left: 5px;
-  background-color: rgba(153, 153, 153, 0.466); }
+  background-color: rgba(153, 153, 153, 0.466);
+}
 
 .each-shift * {
-  margin: 0; }
+  margin: 0;
+}
+
+.message {
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 70px;
+  text-align: center;
+  text-shadow: 0 0 15px black, 0 0 50px black, 1px 1px 0 black, -1px -1px 0 black;
+}
+
+.error-message {
+  text-shadow: 0 0 15px red, 1px 1px 0 red, 0 0 50px red, -1px -1px 0 red;
+}
+
+.success-message {
+  text-shadow: 0 0 15px blue, 0 0 50px blue, 1px 1px 0 blue, -1px -1px 0 blue;
+}
