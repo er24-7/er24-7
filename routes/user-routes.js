@@ -25,4 +25,13 @@ router.post('/create', (req, res, next) => {
     })
 })
 
+router.get('/login', (req, res, next) => {
+  res.render('user-views/login');
+})
+
+router.post('/login', (req, res, next) => {
+  res.redirect('/users');
+})
+
+
 module.exports = router;
