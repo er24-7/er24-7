@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+nav a {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
 .nav-links a:hover {
   color: rgb(231, 54, 23);
   transform: scale(1.1);
@@ -86,7 +91,8 @@ section {
   display: flex;
   // align-items: center;
   justify-content: space-around;
-  height: calc(100vh - 113.6px);
+  height: calc(100vh - 90px);
+  // height: calc(100vh - 113.6px);
 }
 
 .arrow-back {
@@ -172,7 +178,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: #e7361705;
+  background-color: white;
   // border: 2px solid black;
   border-radius: 5px;
   box-shadow: 5px 5px 5px #b4b4b4;
@@ -192,29 +198,62 @@ section {
 
 .btn {
   padding: 0 .1rem;
-  border: 2px solid #000000;
+  // border: 2px solid #000000;
+  border: none;
+  // background-color: black;
+  color: white;
   border-radius: 2.5px;
-  font-size: .5rem;
+  font-size: .6rem;
   font-weight: 600;
   // display: inline-block;
 }
 
-.edit-button {
-  color: #e73617;
-  border: 2px solid #e73617b4;
+.btns {
   align-self: flex-end;
+  display: flex;
+  width: 32%;
+  justify-content: space-between;
+  align-content: center;
+  height: calc(.6rem + 4px);
+}
+
+.btns form {
+  height: calc(.6rem + 4px);
+  display: inherit;
+}
+
+.edit-button {
+  // color: #e73617;
+  color: white;
+  background-color: #e73617;
+  // border: 2px solid #e73617b4;
+  line-height: .9rem;
 }
 
 .btn:hover {
   transform: scale(1.5);
   transition: all .05s;
+  border-width: 1px;
 }
 
 .edit-button:hover {
-  border: 2px solid #e73617;
+  border: 1px solid #e73617;
+}
+
+.create-button {
+  margin: .5rem;
+  color: white;
+  font-size: 1rem;
+  border: none;
+}
+
+.create-button:hover {
+  transform: scale(1.1);
+  // border: 2px solid white;
 }
 
 .departments-list {
+  padding: 100px 30px;
   width: 81.5%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -223,13 +262,17 @@ section {
 }
 
 .create-stuff {
-  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 50px 20px;
   width: 15%;
-  background-color: #e7361705;
+  color: white;
+  background-color: #f36868;
+  // background-color: #3e3e3ead;
 }
 
 .all-departments {
-  padding: 45px;
   display: flex;
   justify-content: space-between;
 }
@@ -238,4 +281,9 @@ section {
   position: absolute;
   top: 110px;
   left: 20px;
+}
+
+.delete-button {
+  border: 2px solid #e73617b4;
+  color: #e73617;
 }
