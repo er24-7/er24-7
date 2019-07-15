@@ -26,6 +26,14 @@
 
   <button>Update</button>
 
-  <a href="/users/show/{{user._id}}">Back</a>
+
 
 </form>
+
+
+<form action="/users/delete/{{user._id}}" method="POST">
+  <button>Delete</button>
+</form>
+
+
+<a href="/users/show/{{user._id}}">Back</a>
