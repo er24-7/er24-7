@@ -25,6 +25,29 @@ router.post('/create', (req, res, next) => {
     })
 })
 
+router.get('/edit/thisEmployee', (req, res, next) => {
+  res.render('user-views/edit')
+})
+
+router.post('/edit/thisEmployee', (req, res, next) => {
+  // User.findByIdAndUpdate(req.body)
+  //   .then(() => {
+  req.flash('success', 'User successfully edited')
+  res.redirect('/departments/sampleDepartment/thisEmployee')
+  // })
+  // .catch((err) => {
+  //   req.flash('error', 'Error, please try again')
+  //   console.log(err)
+  //   res.redirect('/users')
+
+  // })
+})
+
+router.post('/delete/thisEmployee', (req, res, next) => {
+  req.flash('success', 'User successfully deleted')
+  res.redirect('/departments')
+})
+
 router.get('/login', (req, res, next) => {
   res.render('user-views/login');
 })
