@@ -1,32 +1,39 @@
-<h2>All departments</h2>
-<p>Click on the name of the department to view</p>
-
 {{!-- Sample department --}}
-<h3>
-  <a href="/departments/sampleDepartment">
-    Sample Department
-  </a>
-</h3>
-<a href="/departments/sampleDepartment/edit">Edit</a>
+<a href="/users"><img src="/images/left-arrow.svg" alt="" class="go-back-btn"></a>
+{{!-- <h2>DEPARTMENTS</h2> --}}
 
-<h3>
-  <a href="/departments/sampleDepartment">
-    Sample Department
-  </a>
-</h3>
-<a href="/departments/sampleDepartment/edit">Edit</a>
-
-<h3>
-  <a href="/departments/sampleDepartment">
-    Sample Department
-  </a>
-</h3>
-<a href="/departments/sampleDepartment/edit">Edit</a>
-
-<h6>
-  <a href="/departments/create">Create New Department</a>
-</h6>
-
-<h6>
-  <a href="/users">Go Back</a>
-</h6>
+<div class="departments-list">
+  <div class="each-department">
+    <a href="/departments/sampleDepartment">Intensive Care</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+  </div>
+  <div class="each-department">
+    <a href="/departments/sampleDepartment">Intensive Care</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+  </div>
+  <div class="each-department">
+    <a href="/departments/sampleDepartment">Intensive Care</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+  </div>
+  <div class="each-department">
+    <a href="/departments/sampleDepartment">Intensive Care</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+  </div>
+  <div class="each-department">
+    <a href="/departments/sampleDepartment">Intensive Care</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+  </div>
+</div>
+<div class="create-stuff">
+  <div>
+    <a class="btn create-button" href="/departments/create">NEW DEPARTMENT</a>
+  </div>
+  <div>
+    <a class="btn create-button" href="/users/create">NEW EMPLOYEE</a>
+  </div>
+</div>
