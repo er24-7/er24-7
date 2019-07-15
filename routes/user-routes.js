@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User')
+const Department = require('../models/Department')
 
 /* GET user page */
 router.get('/', (req, res, next) => {
@@ -8,14 +9,21 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/create', (req, res, next) => {
-  res.render('user-views/create')
+  Department.find()
+    .then((allDepartments) => {
+      res.render('user-views/create', { departments: allDepartments })
+
+    })
+    .catch((err) => {
+      next(err)
+    })
 })
 
 router.post('/create', (req, res, next) => {
   User.create(req.body)
     .then(() => {
       req.flash('success', 'User successfully created')
-      res.redirect('/users')
+      res.redirect('/departments')
     })
     .catch((err) => {
       req.flash('error', 'Error, please try again')

@@ -8,6 +8,7 @@ const userSchema = new Schema({
   password: String,
   email: { type: String, unique: true },
   phone: String,
+  department: { type: Schema.Types.ObjectId, ref: "Department" },
   role: { type: String, enum: ["ADM", "MAN", "EMP"] }
 
 })

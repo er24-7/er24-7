@@ -5,14 +5,22 @@
   <label>Last Name: </label>
   <input type="text" name="lastName">
 
-  <label>Password: </label>
-  <input type="text" name="password">
-
   <label>Email: </label>
   <input type="text" name="email">
 
+  <label>Password: </label>
+  <input type="password" name="password">
+
   <label>Phone: </label>
   <input type="text" name="phone">
+
+  <label>Department: </label>
+  <select name="department">
+    {{#each departments}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+
 
   <label>Role: </label>
   <select name="role">

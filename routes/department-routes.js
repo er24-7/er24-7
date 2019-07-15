@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User')
 const Department = require('../models/Department')
 
 router.get('/', (req, res, render) => {
@@ -34,7 +35,13 @@ router.post('/create', (req, res, render) => {
 router.get('/:deptName', (req, res, render) => {
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
-      res.render('department-views/one-department', { department: theDepartment })
+      User.find({ department: theDepartment._id })
+        .then((allUsers) => {
+          res.render('department-views/one-department', { department: theDepartment, users: allUsers })
+        })
+        .catch((err) => {
+          next(err)
+        })
     })
     .catch((err) => {
       next(err)

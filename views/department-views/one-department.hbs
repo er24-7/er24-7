@@ -1,22 +1,11 @@
 <h2>{{department.name}}</h2>
 
 
-<h3>List of Employees Go here</h3>
-<p>Make the list scrollable</p>
-<ul>
-  <li>
-    <a href="/departments/sampleDepartment/thisEmployee">
-      Sample Employee
-    </a>
-  </li>
-</ul>
+{{#each users}}
+<a href="">{{this.firstName}} {{this.lastName}}</a>
+{{/each}}
+
 <h3>Department Schedule goes here</h3>
-
-
-
-{{!-- <div>
-  I am the schedule. Can you put me on the right side?
-</div> --}}
 
 <h6>
   <a href="/departments/{{department.name}}/edit">Edit Department</a>
