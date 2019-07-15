@@ -6,7 +6,12 @@
   <div class="each-department">
     <a href="/departments/{{this.name}}">{{this.name}}</a>
     <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
-    <a class="btn edit-button" href="/departments/{{this.name}}/edit">EDIT</a>
+    <div class="btns">
+      <a class="btn edit-button" href="/departments/{{this.name}}/edit">EDIT</a>
+      <form action="/departments/{{this.name}}/delete" method="POST">
+        <button class="btn delete-button">DELETE</button>
+      </form>
+    </div>
   </div>
 {{/each}}
 
