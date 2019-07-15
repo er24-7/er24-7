@@ -60,40 +60,40 @@ router.get('/edit/:id', (req, res, next) => {
 
 })
 
-router.post('/edit/thisEmployee', (req, res, next) => {
-  // User.findByIdAndUpdate(req.body)
-  //   .then(() => {
-  req.flash('success', 'User successfully edited')
-  res.redirect('/departments/sampleDepartment/thisEmployee')
+router.post('/edit/:id', (req, res, next) => {
+  User.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      req.flash('success', 'User successfully edited')
+      res.redirect('/departments/sampleDepartment/thisEmployee')
+    })
+    .catch((err) => {
+      req.flash('error', 'Error, please try again')
+      console.log(err)
+      res.redirect('/users/edit/' + req.params.id)
+
+      // })
+    })
+
+  router.post('/delete/thisEmployee', (req, res, next) => {
+    req.flash('success', 'User successfully deleted')
+    res.redirect('/departments')
+  })
+
+  router.get('/login', (req, res, next) => {
+    res.render('user-views/login');
+  })
+
+  router.post('/login', (req, res, next) => {
+    res.redirect('/users');
+  })
+
+  // router.get('/employees', (req, res, next) => {
+  //   res.render('user-views/employee-list')
   // })
-  // .catch((err) => {
-  //   req.flash('error', 'Error, please try again')
-  //   console.log(err)
-  //   res.redirect('/users')
 
+  // router.get('/employees/sample', (req, res, next) => {
+  //   res.render('user-views/employee-list')
   // })
-})
-
-router.post('/delete/thisEmployee', (req, res, next) => {
-  req.flash('success', 'User successfully deleted')
-  res.redirect('/departments')
-})
-
-router.get('/login', (req, res, next) => {
-  res.render('user-views/login');
-})
-
-router.post('/login', (req, res, next) => {
-  res.redirect('/users');
-})
-
-// router.get('/employees', (req, res, next) => {
-//   res.render('user-views/employee-list')
-// })
-
-// router.get('/employees/sample', (req, res, next) => {
-//   res.render('user-views/employee-list')
-// })
 
 
-module.exports = router;
+  module.exports = router;
