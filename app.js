@@ -116,5 +116,8 @@ app.use('/users', userRouteVar);
 const shiftRouteVar = require('./routes/shift-routes');
 app.use('/shifts', shiftRouteVar);
 
+const departmentRouteVar = require('./routes/department-routes');
+app.use('/departments', departmentRouteVar);
+
 
 module.exports = app;

@@ -33,5 +33,13 @@ router.post('/login', (req, res, next) => {
   res.redirect('/users');
 })
 
+router.get('/employees', (req, res, next) => {
+  res.render('user-views/employee-list')
+})
+
+router.get('/employees/sample', (req, res, next) => {
+  res.render('user-views/employee-list')
+})
+
 
 module.exports = router;
