@@ -1,9 +1,17 @@
-{{!-- Sample department --}}
 <a class="go-back" href="/users"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
-{{!-- <h2>DEPARTMENTS</h2> --}}
-
 <section class="all-departments">
   <div class="departments-list">
+
+{{#each departments}}
+  <div class="each-department">
+    <a href="/departments/{{this.name}}">{{this.name}}</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <a class="btn edit-button" href="/departments/{{this.name}}/edit">EDIT</a>
+  </div>
+{{/each}}
+
+
+
     <div class="each-department">
       <a href="/departments/sampleDepartment">Intensive Care</a>
       <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
