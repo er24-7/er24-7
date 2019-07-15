@@ -1,28 +1,15 @@
 <h2>{{user.firstName}} {{user.lastName}}</h2>
 
 
-<h3>Employee's General Info will go here</h3>
-<p>Make the list scrollable</p>
 <ul>
-  <li>Name</li>
-  <li>Email</li>
-  <li>Phone</li>
-  <li>etc.</li>
-</ul>
-<ul>
-  <li>Link to Password reset</li>
-  <li>Link to edit info</li>
-  <li>Doesn't have to be in an li</li>
+  <li>Email: {{user.email}}</li>
+  <li>Phone: {{user.phone}}</li>
+  <li>Department: {{user.department.name}}</li>
+  <li>Role: {{user.role}}</li>
 </ul>
 
-
-<a href="/users/edit/thisEmployee">Edit Employee</a>
-
-
-<form action="/users/delete/thisEmployee" method="POST">
-  <button>Delete This Employee</button>
-</form>
+<a href="/users/edit/{{user._id}}">Edit Employee</a>
 
 <h6>
-  <a href="/users">Go Back</a>
+  <a href="/departments/{{user.department.name}}">Go Back</a>
 </h6>

@@ -34,7 +34,7 @@ router.post('/create', (req, res, next) => {
 })
 
 router.get('/show/:id', (req, res, next) => {
-  User.findById(req.params.id)
+  User.findById(req.params.id).populate('department')
     .then((theUser) => {
       res.render('user-views/show', { user: theUser })
     })
@@ -43,8 +43,21 @@ router.get('/show/:id', (req, res, next) => {
     })
 })
 
-router.get('/edit/thisEmployee', (req, res, next) => {
-  res.render('user-views/edit')
+router.get('/edit/:id', (req, res, next) => {
+  Department.find()
+    .then((allDepartments) => {
+      User.findById(req.params.id).populate('department')
+        .then((theUser) => {
+          res.render('user-views/edit', { user: theUser, departments: allDepartments })
+        })
+        .catch((err) => {
+          next(err)
+        })
+    })
+    .catch((err) => {
+      next(err)
+    })
+
 })
 
 router.post('/edit/thisEmployee', (req, res, next) => {
