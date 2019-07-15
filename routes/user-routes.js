@@ -33,6 +33,16 @@ router.post('/create', (req, res, next) => {
     })
 })
 
+router.get('/show/:id', (req, res, next) => {
+  User.findById(req.params.id)
+    .then((theUser) => {
+      res.render('user-views/show', { user: theUser })
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
+
 router.get('/edit/thisEmployee', (req, res, next) => {
   res.render('user-views/edit')
 })

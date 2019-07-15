@@ -80,9 +80,9 @@ router.post('/:deptName/delete', (req, res, render) => {
     })
 })
 
-router.get('/:deptName/thisEmployee', (req, res, render) => {
-  res.render('department-views/one-employee')
-})
+// router.get('/:deptName/thisEmployee', (req, res, render) => {
+//   res.render('department-views/one-employee')
+// })
 
 
 

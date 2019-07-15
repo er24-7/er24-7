@@ -2,7 +2,8 @@
 
 
 {{#each users}}
-<a href="">{{this.firstName}} {{this.lastName}}</a>
+<a href="/users/show/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+<br>
 {{/each}}
 
 <h3>Department Schedule goes here</h3>
