@@ -13,10 +13,10 @@
   <nav>
     <a class="logo" href="/">E R 2 4<span class="seven"><span class="dot">⋅</span>7</span></a>
     <div class="nav-links">
+      {{#if currentUser}}
       <a href="/">Home</a>
       <a href="/users">Users</a>
       <a href="/shifts">Shifts</a>
-      {{#if currentUser}}
       <form action="/users/logout" method="POST">
         <button>
           Logout

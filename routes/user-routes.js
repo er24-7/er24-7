@@ -37,5 +37,9 @@ router.get('/employees', (req, res, next) => {
   res.render('user-views/employee-list')
 })
 
+router.get('/employees/sample', (req, res, next) => {
+  res.render('user-views/employee-list')
+})
+
 
 module.exports = router;
