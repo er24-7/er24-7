@@ -41,23 +41,39 @@ router.get('/:deptName', (req, res, render) => {
     })
 })
 
-
-
-router.get('/sampleDepartment/edit', (req, res, render) => {
-  res.render('department-views/edit-one-department')
+router.get('/:deptName/edit', (req, res, render) => {
+  Department.findOne({ name: req.params.deptName })
+    .then((theDepartment) => {
+      res.render('department-views/edit-one-department', { department: theDepartment })
+    })
+    .catch((err) => {
+      next(err)
+    })
 })
 
-router.post('/sampleDepartment/update', (req, res, render) => {
-  req.flash('success', 'update button was called.  Good job!')
-  res.redirect('/departments')
+router.post('/:deptName/update', (req, res, render) => {
+  Department.findOneAndUpdate({ name: req.params.deptName }, req.body)
+    .then(() => {
+      req.flash('success', 'Department successfully updated')
+      res.redirect('/departments/' + req.params.deptName)
+    })
+    .catch((err) => {
+      next(err)
+    })
 })
 
-router.post('/sampleDepartment/delete', (req, res, render) => {
-  req.flash('success', 'delete button was called.  Good job!')
-  res.redirect('/departments')
+router.post('/:deptName/delete', (req, res, render) => {
+  Department.findOneAndDelete({ name: req.params.deptName })
+    .then(() => {
+      req.flash('success', 'Department successfully delete')
+      res.redirect('/departments')
+    })
+    .catch((err) => {
+      next(err)
+    })
 })
 
-router.get('/sampleDepartment/thisEmployee', (req, res, render) => {
+router.get('/:deptName/thisEmployee', (req, res, render) => {
   res.render('department-views/one-employee')
 })
 
