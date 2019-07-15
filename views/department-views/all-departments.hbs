@@ -2,7 +2,7 @@
 <p>Click on the name of the department to view</p>
 
 {{!-- Sample department --}}
-<h3>
+{{!-- <h3>
   <a href="/departments/sampleDepartment">
     Sample Department
   </a>
@@ -21,7 +21,22 @@
     Sample Department
   </a>
 </h3>
-<a href="/departments/sampleDepartment/edit">Edit</a>
+<a href="/departments/sampleDepartment/edit">Edit</a> --}}
+
+{{#each departments}}
+<div>
+  <h4>
+    <a href="/departments/{{this.name}}">
+      {{this.name}}
+    </a>
+  </h4>
+
+  {{!-- <a href="/departments/{{this.name}}/edit">
+    Edit
+  </a> --}}
+</div>
+{{/each}}
+
 
 <h6>
   <a href="/departments/create">Create New Department</a>

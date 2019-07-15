@@ -3,12 +3,14 @@ const router = express.Router();
 const Department = require('../models/Department')
 
 router.get('/', (req, res, render) => {
-  res.render('department-views/all-departments')
-})
+  Department.find()
+    .then((allDepartments) => {
+      res.render('department-views/all-departments', { departments: allDepartments })
+    })
+    .catch((err) => {
+      next(err)
+    })
 
-
-router.get('/sampleDepartment', (req, res, render) => {
-  res.render('department-views/one-department')
 })
 
 router.get('/create', (req, res, render) => {
@@ -16,9 +18,30 @@ router.get('/create', (req, res, render) => {
 })
 
 router.post('/create', (req, res, render) => {
-  req.flash('success', 'create button was called.  Good job!')
-  res.redirect('/departments')
+  Department.create(req.body)
+    .then(() => {
+      req.flash('success', 'Department successfully created')
+      res.redirect('/departments')
+    })
+    .catch((err) => {
+      req.flash('error', 'Error, please try again')
+      console.log(err)
+      res.redirect('/departments/create')
+
+    })
 })
+
+router.get('/:deptName', (req, res, render) => {
+  Department.findOne({ name: req.params.deptName })
+    .then((theDepartment) => {
+      res.render('department-views/one-department', { department: theDepartment })
+    })
+    .catch((err) => {
+      next(err)
+    })
+})
+
+
 
 router.get('/sampleDepartment/edit', (req, res, render) => {
   res.render('department-views/edit-one-department')
