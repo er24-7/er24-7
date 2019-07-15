@@ -14,12 +14,14 @@
   <li>Link to edit info</li>
   <li>Doesn't have to be in an li</li>
 </ul>
-<h3>Employee's Schedule goes here</h3>
-<div>
-  I am the schedule. Can you put me on the right side?
-  I should look exactly like the department schedule, except on this page,
-  You should only see one person's schedule
-</div>
+
+
+<a href="/users/edit/thisEmployee">Edit Employee</a>
+
+
+<form action="/users/delete/thisEmployee" method="POST">
+  <button>Delete This Employee</button>
+</form>
 
 <h6>
   <a href="/users">Go Back</a>
