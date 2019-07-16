@@ -1,3 +1,71 @@
+<a class="go-back" href="/departments"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
+<section class="container">
+  <div class="spread-stuff">
+    <form action="/users/create" method="POST">
+      <div>
+        <label>First Name: </label>
+        <input type="text" name="firstName">
+      </div>
+      <div>
+        <label>Last Name: </label>
+        <input type="text" name="lastName">
+      </div>
+      <div>
+        <label>E-mail: </label>
+        <input type="text" name="email">
+      </div>
+      <div>
+        <label>Password: </label>
+        <input type="password" name="password">
+      </div>
+      <div>
+        <label>Phone: </label>
+        <input type="text" name="phone">
+      </div>
+      <div>
+        <label>Department: </label>
+        <select name="department">
+          {{#each departments}}
+            <option value="{{this._id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div>
+        <label>Role: </label>
+        <select name="role">
+          <option value="EMP">Employee</option>
+          <option value="MAN">Manager</option>
+        </select>
+      </div>
+
+      <button class="submit-button">CREATE</button>
+    </form>
+    {{!-- <div class="employee-list"> --}}
+      <div id="employee-list">
+        {{#each users}}
+          <a href="/users/show/{{this._id}}">
+            {{this.firstName}} {{this.lastName}}
+          </a>
+          <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
+          <br>
+        {{/each}}
+      </div>
+    {{!-- </div> --}}
+  </div>
+  <div class="side-bar">
+    {{!-- <p>Type in your e-mail and password.</p> --}}
+  </div>
+</section>
+
+
+
+
+
+
+{{!-- 
+
+
+
 <section class="container">
   <a class="arrow-back" href="/">←</a>
   <div class="board">
@@ -56,4 +124,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
