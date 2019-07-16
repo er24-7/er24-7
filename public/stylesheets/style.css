@@ -16,11 +16,13 @@ nav a {
   font-size: 1.8rem; }
 
 .nav-links a:hover {
-  color: #e73617;
   transform: scale(1.1);
   transition: all 0.5s; }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   line-height: 90px;
@@ -84,6 +86,7 @@ nav {
   border: 1px solid black; }
 
 .all-departments {
+  margin-top: 90px;
   display: flex;
   justify-content: space-around;
   height: calc(100vh - 90px); }
@@ -241,22 +244,44 @@ nav {
   color: #e73617; }
 
 .land-style {
-  height: calc(100vh - 90px);
-  margin-top: -90px;
-  padding-top: 90px;
+  height: 100vh;
   background-image: linear-gradient(-127deg, transparent 66%, #e7361717 73%), linear-gradient(-130deg, transparent 66%, #e7361717 73%), linear-gradient(-133deg, transparent 66%, #e7361717 73%), linear-gradient(-136deg, transparent 66%, #e7361717 73%), linear-gradient(-139deg, transparent 66%, #e7361717 73%), linear-gradient(-142deg, transparent 66%, #e7361717 73%), linear-gradient(-145deg, transparent 66%, #e7361717 73%), linear-gradient(-148deg, transparent 66%, #e7361717 73%), linear-gradient(-151deg, transparent 66%, #e7361717 73%), linear-gradient(-154deg, transparent 66%, #e7361717 73%), linear-gradient(-157deg, transparent 66%, #e7361717 73%), linear-gradient(-160deg, transparent 66%, #e7361717 73%), linear-gradient(-163deg, transparent 66%, #e7361717 73%); }
 
 .land-style-2 {
-  width: calc(100vw - 2px);
-  height: calc(100vh - 92px);
+  height: 100vh;
   background-image: url("/images/hospital-pic.jpeg");
   background-size: 100vw auto;
   background-position: bottom;
   background-repeat: no-repeat; }
 
 .land-positioning {
-  width: 50%;
+  width: 60%;
+  font-size: 1.5rem;
   text-align: right;
-  margin-left: 15%; }
+  padding: 123px 74px;
+  font-weight: 500;
+  color: black; }
+
+.land-positioning p {
+  margin: 0; }
+
+.demo-btn {
+  position: absolute;
+  top: 500px;
+  right: 30%;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 4px solid black;
+  padding: 1rem;
+  background-color: #ffffff8a;
+  box-shadow: 10px 10px 10px grey; }
+
+.demo-btn:hover {
+  box-shadow: 10px 10px 10px black;
+  background-color: #ffffff;
+  transition: all .5s; }
+
+.container {
+  margin-top: 90px; }
 
 /*# sourceMappingURL=style.css.map */

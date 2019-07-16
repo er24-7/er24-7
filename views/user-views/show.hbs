@@ -1,15 +1,17 @@
-<h2>{{user.firstName}} {{user.lastName}}</h2>
+<section class="container">
+  <h2>{{user.firstName}} {{user.lastName}}</h2>
 
 
-<ul>
-  <li>Email: {{user.email}}</li>
-  <li>Phone: {{user.phone}}</li>
-  <li>Department: {{user.department.name}}</li>
-  <li>Role: {{user.role}}</li>
-</ul>
+  <ul>
+    <li>Email: {{user.email}}</li>
+    <li>Phone: {{user.phone}}</li>
+    <li>Department: {{user.department.name}}</li>
+    <li>Role: {{user.role}}</li>
+  </ul>
 
-<a href="/users/edit/{{user._id}}">Edit Employee</a>
+  <a href="/users/edit/{{user._id}}">Edit Employee</a>
 
-<h6>
-  <a href="/departments/{{user.department.name}}">Go Back</a>
-</h6>
+  <h6>
+    <a href="/departments/{{user.department.name}}">Go Back</a>
+  </h6>
+</section>
