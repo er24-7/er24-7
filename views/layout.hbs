@@ -15,11 +15,14 @@
     <div class="nav-links">
       <a href="/departments">Admin View</a>
       {{#if currentUser}}
-      <a href="/">Home</a>
-      <a href="/users">Users</a>
-      <a href="/shifts">Shifts</a>
-      <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
+      <form action="/to-department" method="POST">
+        <button>Department</button>
+      </form>
+      <form action="/to-profile" method="POST">
+        <button>Profile</button>
+      </form>
       <form action="/users/logout" method="POST">
+        <label>{{currentUser.firstName}} {{currentUser.lastName}}</label>
         <button>
           Logout
         </button>

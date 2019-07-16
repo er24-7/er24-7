@@ -97,6 +97,8 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -106,8 +108,6 @@ app.use((req, res, next) => {
   res.locals.yay = req.flash('success')
   next();
 });
-
-
 
 const indexRouteVar = require('./routes/index');
 app.use('/', indexRouteVar);

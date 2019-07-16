@@ -121,12 +121,31 @@ router.get('/login', (req, res, next) => {
   res.render('user-views/login');
 })
 
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/users",
-  failureRedirect: "/users/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
+router.post('/login', function (req, res, next) {
+  passport.authenticate('local', function (err, user, info) {
+    if (err) { return next(err); }
+    // Redirect if it fails
+    if (!user) { return res.redirect('/users/login'); }
+    req.logIn(user, function (err) {
+      if (err) { return next(err); }
+      // Redirect if it succeeds
+      return res.redirect('/users')
+      // User.findById(user._id).populate('department')
+      //   .then((theUser) => {
+      //     if (theUser.role == "MAN") {
+      //       return res.redirect('/departments/' + theUser.department.name)
+      //     } else {
+      //       return res.redirect('/users/show/' + theUser._id)
+
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     return next(err)
+      //   })
+    });
+  })(req, res, next);
+});
+
 
 router.post('/logout', (req, res, next) => {
   req.logout();
