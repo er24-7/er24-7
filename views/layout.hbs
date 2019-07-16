@@ -10,26 +10,34 @@
 </head>
 
 <body>
+  <a class="temporary-button" href="/departments">Admin View</a>
   <nav>
     <a class="logo" href="/">E R 2 4<span class="seven"><span class="dot">⋅</span>7</span></a>
-    <div class="nav-links">
-      <a href="/shifts/ER">Shifts Shortcut</a>
-      <a href="/departments">Admin View</a>
+    <div class="nav2">
+      <div class="nav-links">
+        {{#if currentUser}}
+        <form action="/to-department" method="POST">
+          <button>Department</button>
+        </form>
+        <form action="/to-profile" method="POST">
+          <button>Profile</button>
+        </form>
+        <form action="/users/logout" method="POST">
+          <button>
+            Logout
+          </button>
+        </form>
+        {{else}}
+        <a href="/users/login">Login</a>
+        {{/if}}
+      </div>
       {{#if currentUser}}
-      <form action="/to-department" method="POST">
-        <button>Department</button>
-      </form>
       <form action="/to-profile" method="POST">
-        <button>Profile</button>
-      </form>
-      <form action="/users/logout" method="POST">
-        <label>{{currentUser.firstName}} {{currentUser.lastName}}</label>
-        <button>
-          Logout
+        <button class="username login-info">
+          <img src="/images/default-pic.svg" alt="default profile image">
+          <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
         </button>
       </form>
-      {{else}}
-      <a href="/users/login">Login</a>
       {{/if}}
     </div>
   </nav>
