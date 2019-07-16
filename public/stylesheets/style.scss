@@ -19,7 +19,6 @@ nav a {
 }
 
 .nav-links a:hover {
-  // color: rgb(231, 54, 23);
   transform: scale(1.1);
   transition: all 0.5s;
 }
@@ -52,10 +51,51 @@ nav {
   100% {left: 0}
 }
 
+.temporary-button {
+  position: absolute;
+  top: 88px;
+  left: 21px;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white;
+  font-weight: 700;
+}
+
+.login-info img {
+  outline: 5px solid white;
+  border: 2px solid black;
+  background-color: #f36868;
+  height: 50px;
+  margin: 18px 5px 0 20px;
+}
+
+.login-info, .nav2 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.nav2 button {
+  font-size: 1.2rem;
+  font-weight: 100;
+  border: none;
+  background-color: transparent;
+}
+
+.nav2 button:hover {
+  cursor: pointer;
+}
+
+.username {
+  margin: 0;
+}
+
+.username p {
+  padding-left: 10px;
+  line-height: 50px;
+}
 
 .nav-links {
   display: flex;
-  flex: 0 0 30%;
+  width: 300px;
   justify-content: space-around;
 }
 
@@ -71,14 +111,10 @@ nav {
 }
 
 .logo2 {
-
   margin-left: 0;
   margin: 0;
   width: fit-content;
   height: fit-content;
-  // font-size: 2rem;
-  // font-weight: 500;
-  // letter-spacing: -.27rem;
   border-bottom: none;
 }
 
@@ -108,10 +144,8 @@ nav {
 .all-departments {
   margin-top: 90px;
   display: flex;
-  // align-items: center;
   justify-content: space-around;
   height: calc(100vh - 90px);
-  // height: calc(100vh - 113.6px);
 }
 
 .arrow-back {
@@ -135,15 +169,12 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // margin-left: 50%;
-  // height: 470px;
   width: 95%;
   text-align: left;
 }
 
 .board3 {
   display: flex;
-  // justify-content: space-between;
 }
 
 .board3 * {
@@ -198,7 +229,6 @@ nav {
   flex-direction: column;
   padding: 10px;
   background-color: white;
-  // border: 2px solid black;
   border-radius: 5px;
   box-shadow: 5px 5px 5px #b4b4b4;
 }
@@ -217,14 +247,11 @@ nav {
 
 .btn {
   padding: 0 .1rem;
-  // border: 2px solid #000000;
   border: none;
-  // background-color: black;
   color: white;
   border-radius: 2.5px;
   font-size: .6rem;
   font-weight: 600;
-  // display: inline-block;
 }
 
 .btns {
@@ -242,10 +269,8 @@ nav {
 }
 
 .edit-button {
-  // color: #e73617;
   color: white;
   background-color: #e73617;
-  // border: 2px solid #e73617b4;
   line-height: .9rem;
 }
 
@@ -268,7 +293,6 @@ nav {
 
 .create-button:hover {
   transform: scale(1.1);
-  // border: 2px solid white;
 }
 
 .departments-list {
@@ -288,7 +312,6 @@ nav {
   width: 15%;
   color: white;
   background-color: #f36868;
-  // background-color: #3e3e3ead;
 }
 
 .all-departments {
@@ -309,8 +332,6 @@ nav {
 
 .land-style {
   height: 100vh;
-  // margin-top: -90px;
-  // padding-top: 20px;
   background-image:
   linear-gradient(-127deg, transparent 66%, #e7361717 73%),
   linear-gradient(-130deg, transparent 66%, #e7361717 73%),
@@ -328,7 +349,6 @@ nav {
 }
 
 .land-style-2 {
-  // margin-top: 90px;
   height: 100vh;
   background-image: url("/images/hospital-pic.jpeg");
   background-size: 100vw auto;
@@ -360,7 +380,6 @@ nav {
   background-color: #ffffff8a;
   box-shadow: 10px 10px 10px grey;
 }
-
 
 .demo-btn:hover {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
