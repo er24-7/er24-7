@@ -324,9 +324,12 @@ nav {
 }
 
 .land-style-2 {
-  border: 1px solid transparent;
-  height: calc(100vh - 90px);
-  background-image: url("https://images.unsplash.com/photo-1533042789716-e9a9c97cf4ee");
+  // border: 1px solid black;
+  width: calc(100vw - 2px);
+  height: calc(100vh - 92px);
+  // height: calc(100vh - 90px);
+  background-image: url("/images/hospital-pic.jpeg");
+  // background-image: url("https://images.unsplash.com/photo-1533042789716-e9a9c97cf4ee");
   background-size: 100vw auto;
   background-position: bottom;
   background-repeat: no-repeat;
