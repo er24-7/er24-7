@@ -326,7 +326,7 @@ nav {
   height: 2rem;
   margin-bottom: .5rem; }
 
-.center-stuff form {
+.center-stuff > * {
   background-color: #f0f0f0;
   padding: 50px 40px;
   box-shadow: 5px 5px 5px #a1a1a1; }
@@ -340,5 +340,12 @@ nav {
   cursor: pointer;
   transform: scale(1.1);
   transition: all .2s; }
+
+.department-box {
+  min-height: 400px;
+  min-width: 700px;
+  text-align: left;
+  display: flex;
+  flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */
