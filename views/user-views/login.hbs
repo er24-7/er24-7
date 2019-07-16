@@ -1,16 +1,19 @@
 <section class="container">
-
-  <h2>Login Page</h2>
-
-  <form action="/users/login" method="POST">
-    <label>Email:</label>
-    <input type="text" name="username">
-
-    <label>Password:</label>
-    <input type="password" name="password">
-
-    <button>Submit</button>
-
-  </form>
-
+      {{!-- <p>LOGIN:</p> --}}
+  <div class="center-stuff">
+    <form action="/users/login" method="POST">
+      <div>
+        <label>e-mail:</label>
+        <input type="text" name="username">
+      </div>
+      <div>
+        <label>password:</label>
+        <input type="password" name="password">
+      </div>
+      <button class="submit-button">SUBMIT</button>
+    </form>
+  </div>
+  <div class="side-bar">
+    <p>Type in your e-mail and password.</p>
+  </div>
 </section>

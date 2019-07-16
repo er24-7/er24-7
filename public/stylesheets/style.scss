@@ -34,10 +34,11 @@ nav {
 }
 
 .go-back-btn {
-  width: 50px;
+  width: 40px;
 }
 
 .go-back-btn:hover {
+  transform: scale(3);
   position: relative;
   animation-name: blah;
   animation-iteration-count: infinite;
@@ -46,9 +47,9 @@ nav {
 }
 
 @keyframes blah {
-  0% {left: 0}
-  85% {left: 10px}
-  100% {left: 0}
+  0% {left: 30px}
+  85% {left: 40px}
+  100% {left: 30px}
 }
 
 .temporary-button {
@@ -141,10 +142,10 @@ nav {
 }
 
 
-.all-departments {
-  margin-top: 90px;
+.all-departments, .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 90px;
   height: calc(100vh - 90px);
 }
 
@@ -296,7 +297,7 @@ nav {
 }
 
 .departments-list {
-  padding: 100px 30px;
+  padding: 50px 30px;
   width: 81.5%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -304,24 +305,24 @@ nav {
   gap: 30px;
 }
 
-.create-stuff {
+.side-bar {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 50px 20px;
+  padding: 150px 20px;
   width: 15%;
   color: white;
   background-color: #f36868;
 }
 
-.all-departments {
-  display: flex;
-  justify-content: space-between;
-}
+// .all-departments {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .go-back {
   position: absolute;
-  top: 110px;
+  top: 70px;
   left: 20px;
 }
 
@@ -387,6 +388,36 @@ nav {
   transition: all .5s;
 }
 
-.container {
-  margin-top: 90px;
+.center-stuff {
+  text-align: right;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.center-stuff input {
+  width: 400px;
+  height: 2rem;
+  margin-bottom: .5rem;
+}
+
+.center-stuff form {
+  // border: 1px solid black;
+  background-color: #f0f0f0;
+  padding: 50px 40px;
+  box-shadow: 5px 5px 5px rgb(161, 161, 161);
+}
+
+.submit-button {
+  border: 2px solid black;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all .2s;
 }
