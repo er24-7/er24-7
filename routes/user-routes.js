@@ -53,7 +53,7 @@ router.post('/create', (req, res, next) => {
   })
     .then(() => {
       req.flash('success', 'User successfully created')
-      res.redirect('/departments')
+      res.redirect('/users/create')
     })
     .catch((err) => {
       req.flash('error', 'Error, please try again')

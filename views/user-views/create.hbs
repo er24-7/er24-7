@@ -1,46 +1,59 @@
-<form action="/users/create" method="POST">
-  <label>First Name: </label>
-  <input type="text" name="firstName">
+<section>
+  <a class="arrow-back" href="/">←</a>
+  <div class="board">
+    <div class="board2">
+      <div class="board3">
+        <div>
+          <h2>ADD EMPLOYEE</h2>
+          <form action="/users/create" method="POST">
+            <label>First Name: </label>
+            <input type="text" name="firstName">
 
-  <label>Last Name: </label>
-  <input type="text" name="lastName">
+            <label>Last Name: </label>
+            <input type="text" name="lastName">
 
-  <label>Email: </label>
-  <input type="text" name="email">
+            <label>Email: </label>
+            <input type="text" name="email">
 
-  <label>Password: </label>
-  <input type="password" name="password">
+            <label>Password: </label>
+            <input type="password" name="password">
 
-  <label>Phone: </label>
-  <input type="text" name="phone">
+            <label>Phone: </label>
+            <input type="text" name="phone">
 
-  <label>Department: </label>
-  <select name="department">
-    {{#each departments}}
-    <option value="{{this._id}}">{{this.name}}</option>
-    {{/each}}
-  </select>
-
-
-  <label>Role: </label>
-  <select name="role">
-    <option value="EMP">Employee</option>
-    <option value="MAN">Manager</option>
-  </select>
-
-  <button>Create</button>
+            <label>Department: </label>
+            <select name="department">
+              {{#each departments}}
+              <option value="{{this._id}}">{{this.name}}</option>
+              {{/each}}
+            </select>
 
 
-</form>
+            <label>Role: </label>
+            <select name="role">
+              <option value="EMP">Employee</option>
+              <option value="MAN">Manager</option>
+            </select>
 
-<h3>List of all employees</h3>
+            <button>Create</button>
 
-{{#each users}}
-<a href="/users/show/{{this._id}}">
-  {{this.firstName}} {{this.lastName}}
-</a>
-<a href="/users/edit/{{this._id}}">
-  Edit
-</a>
-<br>
-{{/each}}
+
+          </form>
+        </div>
+        <div>
+          <div id="employee-list">
+            {{#each users}}
+            <a href="/users/show/{{this._id}}">
+              {{this.firstName}} {{this.lastName}}
+            </a>
+            <a href="/users/edit/{{this._id}}">
+              Edit
+            </a>
+            <br>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
