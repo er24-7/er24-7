@@ -128,13 +128,10 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-// router.get('/employees', (req, res, next) => {
-//   res.render('user-views/employee-list')
-// })
-
-// router.get('/employees/sample', (req, res, next) => {
-//   res.render('user-views/employee-list')
-// })
+router.post('/logout', (req, res, next) => {
+  req.logout();
+  res.redirect("/users/login");
+})
 
 
 module.exports = router;
