@@ -406,7 +406,7 @@ nav {
   justify-content: space-around;
 }
 
-.spread-stuff form {
+.spread-stuff > *:first-child {
   height: 500px;
 }
 
@@ -456,4 +456,12 @@ nav {
   width: fit-content;
   font-size: .8rem;
   padding: 0 .3rem;
+}
+
+.employee-list > * {
+  margin: 0;
+}
+
+.emp-formatting {
+  font-weight: 500;
 }
