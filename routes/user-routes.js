@@ -94,7 +94,7 @@ router.post('/edit/:id', (req, res, next) => {
   User.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       req.flash('success', 'User successfully edited')
-      res.redirect('/users/show/' + req.params.id)
+      res.redirect('/users/edit/' + req.params.id)
     })
     .catch((err) => {
       req.flash('error', 'Error, please try again')
