@@ -174,7 +174,7 @@ nav {
 .message {
   color: white;
   padding-right: 10px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   width: 200px;
   position: absolute;
   top: 141px;
@@ -321,12 +321,23 @@ nav {
   width: 100%;
   justify-content: center; }
 
-.center-stuff input {
+.spread-stuff {
+  text-align: right;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around; }
+
+.spread-stuff > *:first-child {
+  height: 500px; }
+
+.spread-stuff input, .center-stuff input, .spread-stuff select, .center-stuff select {
   width: 400px;
   height: 2rem;
   margin-bottom: .5rem; }
 
-.center-stuff > * {
+.spread-stuff > *, .center-stuff > * {
   background-color: #f0f0f0;
   padding: 50px 40px;
   box-shadow: 5px 5px 5px #a1a1a1; }
@@ -347,5 +358,24 @@ nav {
   text-align: left;
   display: flex;
   flex-direction: column; }
+
+#employee-list {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 350px;
+  height: 500px; }
+
+#employee-list .submit-button {
+  width: fit-content;
+  font-size: .8rem;
+  padding: 0 .3rem; }
+
+.employee-list > * {
+  margin: 0; }
+
+.emp-formatting {
+  font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */
