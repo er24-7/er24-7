@@ -1,50 +1,30 @@
+<a class="go-back" href="/departments/{{department.name}}"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
 <section class="container">
-  <a class="arrow-back" href="/users">←</a>
-  <div class="board">
-    <div class="board2">
-      <div class="board3">
-        <div>
-          <h2>ADD SHIFT</h2>
-
-          <form class="form" action="/shifts/{{department.name}}/create" method="POST">
-            <label>EMPLOYEE:</label>
-            <select name="assigned">
-              {{#each users}}
-              <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
-              {{/each}}
-            </select>
-            <label>CODES:</label>
-            {{!-- <input type="text" name="code"> --}}
-            <div class="schedule" id="schedule">
-              {{!-- //table --}}
-            </div>
-            <button>ADD</button>
-          </form>
-        </div>
-        <div>
-          <div id="shifts-list">
-            {{!-- <h4>firstName lastName</h4>
-            <div>Monday, 9am-5pm</div>
-            <div>Tuesday, 9am-5pm</div>
-            <div>Wednesday, 5pm-1am</div> --}}
-            {{#each shifts}}
-            <h4>{{this.assigned.firstName}} {{this.assigned.lastName}}</h4>
-            {{this.codes}}
-
-            {{/each}}
-
-            {{#each shifts.codes}}
-            {{@index}}
-            {{/each}}
-
-
-          </div>
-          <form action="/shifts/{{department.name}}/delete/all" method="POST">
-            <button>Delete All</button>
-          </form>
-        </div>
+  <div class="spread-stuff">
+    <form class="form" action="/shifts/{{department.name}}/create" method="POST">
+      <div>
+        <label>EMPLOYEE:</label>
+        <select name="assigned">
+          {{#each users}}
+            <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
+          {{/each}}
+        </select>
       </div>
+      <div class="schedule" id="schedule"></div>
+      <button class="submit-button">CREATE SHIFTS</button>
+    </form>
+    <div id="shifts-list">
+      {{#each shifts}}
+      <b><a href="/users/show/{{this.assigned._id}}">{{this.assigned.firstName}} {{this.assigned.lastName}}</a></b>
+      <p>{{this.codes}}</p>
+        <br>
+      {{/each}}
+      <form action="/shifts/{{department.name}}/delete/all" method="POST">
+        <button>CLEAR ALL SHIFTS</button>
+      </form>
     </div>
+  </div>
+  <div class="side-bar">
   </div>
 </section>
 
