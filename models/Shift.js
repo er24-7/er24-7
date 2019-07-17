@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const shiftSchema = new Schema({
 
   assigned: { type: Schema.Types.ObjectId, ref: "User" },
-  code: {
+  codes: [{
     type: String, enum: [
       "su1", "su2", "su3",
       "mo1", "mo2", "mo3",
@@ -14,7 +14,7 @@ const shiftSchema = new Schema({
       "fr1", "fr2", "fr3",
       "sa1", "sa2", "sa3",
     ]
-  }
+  }]
 
 })
 

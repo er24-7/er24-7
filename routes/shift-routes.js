@@ -34,14 +34,14 @@ router.get('/:deptName', (req, res, next) => {
 
 router.post('/:deptName/create', (req, res, next) => {
   Shifts.create(req.body)
-    // res.send(req.body)
-    .then(() => {
-      req.flash('success', 'shift added')
-      res.redirect('/shifts/' + req.params.deptName)
+    .then((shift) => {
+      res.send(shift)
+      // req.flash('success', 'shift added')
+      // res.redirect('/shifts/' + req.params.deptName)
     })
     .catch(() => {
-      req.flash('error', 'code incorrect')
-      res.redirect('/shifts/' + req.params.deptName)
+      // req.flash('error', 'code incorrect')
+      // res.redirect('/shifts/' + req.params.deptName)
 
     })
 });
