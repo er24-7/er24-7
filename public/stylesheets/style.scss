@@ -203,7 +203,10 @@ nav {
 }
 
 .schedule {
+  height: 300px;
+  // width: 100%;
   display: grid;
+  gap: 0;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(3, 1fr);
   outline: 2px solid black;
@@ -214,8 +217,8 @@ nav {
 }
 
 .each-slot {
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   outline: 2px solid black;
   margin: 0;
 }
@@ -461,7 +464,7 @@ nav {
   flex-direction: column;
 }
 
-#employee-list {
+#employee-list, .shifts-list {
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -476,7 +479,7 @@ nav {
   padding: 0 .3rem;
 }
 
-.employee-list > * {
+.employee-list > *, .shifts-list > * {
   margin: 0;
 }
 
