@@ -26,7 +26,7 @@ router.get('/:deptName', (req, res, next) => {
   // res.send(moment())
 });
 
-router.post('/create/:deptName', (req, res, next) => {
+router.post('/:deptName/create', (req, res, next) => {
   Shifts.create(req.body)
     .then(() => {
 
@@ -42,14 +42,17 @@ router.post('/create/:deptName', (req, res, next) => {
 });
 
 
+router.post('/:deptName/delete/all', (req, res, next) => {
+  Shifts.deleteMany()
+    .then(() => {
+      req.flash('success', 'shifts deleted')
+      res.redirect('/shifts/' + req.params.deptName)
+    })
+    .catch((err) => {
+      next(err)
+    })
 
-
-
-
-
-
-
-
+})
 
 // router.get('/api', (req, res, next) => {
 

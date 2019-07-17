@@ -6,7 +6,7 @@
         <div>
           <h2>ADD SHIFT</h2>
 
-          <form class="form" action="/shifts/create/{{department.name}}" method="POST">
+          <form class="form" action="/shifts/{{department.name}}/create" method="POST">
             <label>EMPLOYEE:</label>
             <select name="assigned">
               {{#each users}}
@@ -23,6 +23,9 @@
           <div id="shifts-list">
             <p>Test123</p>
           </div>
+          <form action="/shifts/{{department.name}}/delete/all" method="POST">
+            <button>Delete All</button>
+          </form>
         </div>
       </div>
     </div>
