@@ -10,7 +10,7 @@ const userSchema = new Schema({
   phone: String,
   department: { type: Schema.Types.ObjectId, ref: "Department" },
   role: { type: String, enum: ["ADM", "MAN", "EMP"] },
-  department: [{ type: Schema.Types.ObjectId, ref: "Shift" }]
+  // shifts: [{ type: Schema.Types.ObjectId, ref: "Shift" }]
 
 })
 
