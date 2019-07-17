@@ -11,10 +11,16 @@ router.get('/:deptName', (req, res, next) => {
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
       // res.send(theDepartment._id)
-      User.find({ department: theDepartment._id })
+      User.find({ department: theDepartment._id }).populate("shifts")
         .then((allUsers) => {
-          currentDate = moment();
-          res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, date: currentDate });
+          // Shifts.find({ assigned: allUsers })
+          // .then((allShiftsWithinDepartment) => {
+          res.render('shift-views/create-shift', { users: allUsers, department: theDepartment });
+
+          // })
+          // .catch((err) => {
+          //   next(err)
+          // })
         })
         .catch((err) => {
           next(err)
@@ -28,8 +34,8 @@ router.get('/:deptName', (req, res, next) => {
 
 router.post('/:deptName/create', (req, res, next) => {
   Shifts.create(req.body)
-    .then(() => {
-
+    .then((createdShift) => {
+      // User.findByIdAndUpdate(req.body.)
       req.flash('success', 'shift added')
       res.redirect('/shifts/' + req.params.deptName)
     })

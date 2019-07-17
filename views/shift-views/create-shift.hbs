@@ -21,7 +21,13 @@
         </div>
         <div>
           <div id="shifts-list">
-            <p>Test123</p>
+            {{!-- <p>Test123</p> --}}
+            {{#each users}}
+            {{#if users.shifts}}
+            <p>{{this}}</p>
+            {{/if}}
+            {{/each}}
+
           </div>
           <form action="/shifts/{{department.name}}/delete/all" method="POST">
             <button>Delete All</button>
