@@ -4,7 +4,7 @@
     <div class="department-box">
       <h2>{{department.name}}</h2>
       {{#each users}}
-        <a href="/users/show/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+      <a href="/users/show/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
       {{/each}}
       {{!-- <h3>Department Schedule goes here</h3> --}}
     </div>
@@ -15,6 +15,9 @@
     </div>
     <div>
       <a class="btn create-button" href="/user/create">NEW EMPLOYEE</a>
+    </div>
+    <div>
+      <a class="btn create-button" href="/shifts/{{department.name}}">SHIFTS</a>
     </div>
   </div>
 </section>
