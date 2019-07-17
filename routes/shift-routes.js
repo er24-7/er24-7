@@ -13,7 +13,7 @@ router.get('/:deptName', (req, res, next) => {
       // res.send(theDepartment._id)
       User.find({ department: theDepartment._id }).populate("shifts")
         .then((allUsers) => {
-          Shifts.find({ assigned: allUsers })
+          Shifts.find({ assigned: allUsers }).populate('assigned')
             .then((allShiftsWithinDepartment) => {
               res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
 
@@ -34,14 +34,13 @@ router.get('/:deptName', (req, res, next) => {
 
 router.post('/:deptName/create', (req, res, next) => {
   Shifts.create(req.body)
-    .then((shift) => {
-      res.send(shift)
-      // req.flash('success', 'shift added')
-      // res.redirect('/shifts/' + req.params.deptName)
+    .then(() => {
+      req.flash('success', 'shift added')
+      res.redirect('/shifts/' + req.params.deptName)
     })
     .catch(() => {
-      // req.flash('error', 'code incorrect')
-      // res.redirect('/shifts/' + req.params.deptName)
+      req.flash('error', 'code incorrect')
+      res.redirect('/shifts/' + req.params.deptName)
 
     })
 });

@@ -23,15 +23,20 @@
         </div>
         <div>
           <div id="shifts-list">
-            <h4>firstName lastName</h4>
+            {{!-- <h4>firstName lastName</h4>
             <div>Monday, 9am-5pm</div>
             <div>Tuesday, 9am-5pm</div>
-            <div>Wednesday, 5pm-1am</div>
+            <div>Wednesday, 5pm-1am</div> --}}
             {{#each shifts}}
-            {{#if shifts.users}}
-            <p>{{this}}</p>
-            {{/if}}
+            <h4>{{this.assigned.firstName}} {{this.assigned.lastName}}</h4>
+            {{this.codes}}
+
             {{/each}}
+
+            {{#each shifts.codes}}
+            {{@index}}
+            {{/each}}
+
 
           </div>
           <form action="/shifts/{{department.name}}/delete/all" method="POST">
