@@ -13,7 +13,7 @@
               <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
               {{/each}}
             </select>
-            <label>CODE:</label>
+            <label>CODES:</label>
             {{!-- <input type="text" name="code"> --}}
             <div class="schedule" id="schedule">
               {{!-- //table --}}
@@ -23,9 +23,12 @@
         </div>
         <div>
           <div id="shifts-list">
-            <p>Test123</p>
-            {{#each users}}
-            {{#if users.shifts}}
+            <h4>firstName lastName</h4>
+            <div>Monday, 9am-5pm</div>
+            <div>Tuesday, 9am-5pm</div>
+            <div>Wednesday, 5pm-1am</div>
+            {{#each shifts}}
+            {{#if shifts.users}}
             <p>{{this}}</p>
             {{/if}}
             {{/each}}
