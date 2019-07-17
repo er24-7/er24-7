@@ -8,7 +8,9 @@ const userSchema = new Schema({
   password: String,
   email: { type: String, unique: true },
   phone: String,
-  role: { type: String, enum: ["MAN", "EMP"] }
+  department: { type: Schema.Types.ObjectId, ref: "Department" },
+  role: { type: String, enum: ["ADM", "MAN", "EMP"] },
+  // shifts: [{ type: Schema.Types.ObjectId, ref: "Shift" }]
 
 })
 

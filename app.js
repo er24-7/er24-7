@@ -62,8 +62,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 passport.serializeUser((user, cb) => {
   cb(null, user._id);
@@ -82,7 +81,7 @@ app.use(flash());
 // and req.body.password
 // choose your name="" in the hbs file accordingly
 passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ username }, (err, user) => {
+  User.findOne({ email: username }, (err, user) => {
     if (err) {
       return next(err);
     }
@@ -98,14 +97,17 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.err = req.flash('error')
   res.locals.yay = req.flash('success')
   next();
 });
-
-
 
 const indexRouteVar = require('./routes/index');
 app.use('/', indexRouteVar);
@@ -115,6 +117,9 @@ app.use('/users', userRouteVar);
 
 const shiftRouteVar = require('./routes/shift-routes');
 app.use('/shifts', shiftRouteVar);
+
+const departmentRouteVar = require('./routes/department-routes');
+app.use('/departments', departmentRouteVar);
 
 
 module.exports = app;

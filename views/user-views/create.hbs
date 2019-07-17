@@ -1,33 +1,55 @@
-<form action="/users/create" method="POST">
-  <label>First Name: </label>
-  <input type="text" name="firstName">
+<a class="go-back" href="/departments"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
+<section class="container">
+  <div class="spread-stuff">
+    <form action="/users/create" method="POST">
+      <div>
+        <label>First Name: </label>
+        <input type="text" name="firstName">
+      </div>
+      <div>
+        <label>Last Name: </label>
+        <input type="text" name="lastName">
+      </div>
+      <div>
+        <label>E-mail: </label>
+        <input type="text" name="email">
+      </div>
+      <div>
+        <label>Password: </label>
+        <input type="password" name="password">
+      </div>
+      <div>
+        <label>Phone: </label>
+        <input type="text" name="phone">
+      </div>
+      <div>
+        <label>Department: </label>
+        <select name="department">
+          {{#each departments}}
+            <option value="{{this._id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div>
+        <label>Role: </label>
+        <select name="role">
+          <option value="EMP">Employee</option>
+          <option value="MAN">Manager</option>
+        </select>
+      </div>
 
-  <label>Last Name: </label>
-  <input type="text" name="lastName">
-
-  <label>Password: </label>
-  <input type="text" name="password">
-
-  <label>Email: </label>
-  <input type="text" name="email">
-
-  <label>Phone: </label>
-  <input type="text" name="phone">
-
-  <label>Role: </label>
-  <select name="role">
-    <option value="MAN">Manager</option>
-    <option value="EMP">Employee</option>
-  </select>
-
-  <button>Create</button>
-
-</form>
-
-
-{{!-- firstName: String,
-  lastName: String,
-  password: String,
-  email: { type: String, unique: true },
-  phone: String,
-  role: { type: String, enum: ["manager, employee"] } --}}
+      <button class="submit-button">CREATE</button>
+    </form>
+      <div id="employee-list">
+        {{#each users}}
+          <a href="/users/show/{{this._id}}">
+            {{this.firstName}} {{this.lastName}}
+          </a>
+          <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
+          <br>
+        {{/each}}
+      </div>
+  </div>
+  <div class="side-bar">
+  </div>
+</section>

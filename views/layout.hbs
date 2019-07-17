@@ -10,13 +10,40 @@
 </head>
 
 <body>
+  {{!-- <a class="temporary-button" href="/departments">Admin View</a> --}}
+  <a class="temporary-button" href="/departments">Admin View</a>
+
   <nav>
-    <a href="/">Home</a>
-    <a href="/users">Users</a>
-    <a href="/shifts">Shifts</a>
+    <a class="logo" href="/">E R 2 4<span class="seven"><span class="dot">⋅</span>7</span></a>
+    <div class="nav2">
+      <div class="nav-links">
+        {{#if currentUser}}
+        <form action="/to-department" method="POST">
+          <button>Department</button>
+        </form>
+        <form action="/to-profile" method="POST">
+          <button>Profile</button>
+        </form>
+        <form action="/users/logout" method="POST">
+          <button>
+            Logout
+          </button>
+        </form>
+        {{else}}
+        <a href="/users/login">Login</a>
+        {{/if}}
+      </div>
+      {{#if currentUser}}
+      <form action="/to-profile" method="POST">
+        <button class="username login-info">
+          <img src="/images/default-pic.svg" alt="default profile image">
+          <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
+        </button>
+      </form>
+      {{/if}}
+    </div>
   </nav>
 
-  {{{body}}}
 
   {{#if yay}}
   <div class="success-message message">{{yay}}</div>
@@ -26,8 +53,10 @@
   <div class="error-message message">{{err}}</div>
   {{/if}}
 
-  <div class="message">Test message</div>
+  {{!-- <div class="message">Test message111111111111111111111111111111</div> --}}
+  {{{body}}}
 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>
 

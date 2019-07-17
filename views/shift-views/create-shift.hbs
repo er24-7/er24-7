@@ -1,0 +1,44 @@
+<section class="container">
+  <a class="arrow-back" href="/users">←</a>
+  <div class="board">
+    <div class="board2">
+      <div class="board3">
+        <div>
+          <h2>ADD SHIFT</h2>
+
+          <form class="form" action="/shifts/{{department.name}}/create" method="POST">
+            <label>EMPLOYEE:</label>
+            <select name="assigned">
+              {{#each users}}
+              <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
+              {{/each}}
+            </select>
+            <label>CODE:</label>
+            {{!-- <input type="text" name="code"> --}}
+            <div class="schedule" id="schedule">
+              {{!-- //table --}}
+            </div>
+            <button>ADD</button>
+          </form>
+        </div>
+        <div>
+          <div id="shifts-list">
+            <p>Test123</p>
+            {{#each users}}
+            {{#if users.shifts}}
+            <p>{{this}}</p>
+            {{/if}}
+            {{/each}}
+
+          </div>
+          <form action="/shifts/{{department.name}}/delete/all" method="POST">
+            <button>Delete All</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/javascripts/jquery-3.4.1.min.js"></script>
+<script src="/javascripts/schedule.js"></script>

@@ -1,0 +1,56 @@
+<a class="go-back" href="/users/show/{{user._id}}"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
+<section class="container">
+  <div class="spread-stuff">
+    <div>
+      <form action="/users/edit/{{user._id}}" method="POST">
+        <div>
+          <label>First Name: </label>
+          <input type="text" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div>
+          <label>Last Name: </label>
+          <input type="text" name="lastName" value="{{user.lastName}}">
+        </div>
+        <div>
+          <label>E-mail: </label>
+          <input type="text" name="email" value="{{user.email}}">
+        </div>
+        <div>
+          <label>Phone: </label>
+          <input type="text" name="phone" value="{{user.phone}}">
+        </div>
+        <div>
+          <label>Department: </label>
+          <select name="department">
+            {{#each departments}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div>
+          <label>Role: </label>
+          <select name="role">
+            <option value="EMP">Employee</option>
+            <option value="MAN">Manager</option>
+          </select>
+        </div>
+        <button class="submit-button">UPDATE</button>
+      </form>
+    </div>
+    <div id="employee-list" class="employee-list">
+      <a class="emp-formatting" href="/users/show/{{user._id}}">
+        {{user.firstName}} {{user.lastName}}
+      </a>
+      <hr>
+      <p><span class="emp-formatting">E-mail: </span>{{user.email}}</p>
+      <p><span class="emp-formatting">Phone number: </span>{{user.phone}}</p>
+      <p><span class="emp-formatting">Department: </span>{{user.department.name}}</p>
+      <p><span class="emp-formatting">Role: </span>{{user.role}}</p>
+      <form action="/users/delete/{{user._id}}" method="POST">
+        <button class="submit-button">DELETE</button>
+      </form>
+    </div>
+  </div>
+  <div class="side-bar">
+  </div>
+</section>

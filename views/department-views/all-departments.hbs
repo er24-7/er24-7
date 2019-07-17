@@ -1,0 +1,54 @@
+<a class="go-back" href="/users"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
+<section class="all-departments">
+  <div class="departments-list">
+
+{{#each departments}}
+  <div class="each-department">
+    <a href="/departments/{{this.name}}">{{this.name}}</a>
+    <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+    <div class="btns">
+      <a class="btn edit-button" href="/departments/{{this.name}}/edit">EDIT</a>
+      <form action="/departments/{{this.name}}/delete" method="POST">
+        <button class="btn delete-button">DELETE</button>
+      </form>
+    </div>
+  </div>
+{{/each}}
+
+{{!-- 
+
+    <div class="each-department">
+      <a href="/departments/sampleDepartment">Intensive Care</a>
+      <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+      <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+    </div>
+    <div class="each-department">
+      <a href="/departments/sampleDepartment">Intensive Care</a>
+      <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+      <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+    </div>
+    <div class="each-department">
+      <a href="/departments/sampleDepartment">Intensive Care</a>
+      <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+      <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+    </div>
+    <div class="each-department">
+      <a href="/departments/sampleDepartment">Intensive Care</a>
+      <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+      <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+    </div>
+    <div class="each-department">
+      <a href="/departments/sampleDepartment">Intensive Care</a>
+      <p><span class="manager-bold">Manager:</span> <span class="manager">Jane Doe</span></p>
+      <a class="btn edit-button" href="/departments/sampleDepartment/edit">EDIT</a>
+    </div> --}}
+  </div>
+  <div class="side-bar">
+    <div>
+      <a class="btn create-button" href="/departments/create">NEW DEPARTMENT</a>
+    </div>
+    <div>
+      <a class="btn create-button" href="/users/create">NEW EMPLOYEE</a>
+    </div>
+  </div>
+</section>
