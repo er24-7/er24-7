@@ -186,8 +186,9 @@ nav {
 .each-slot {
   width: 60px;
   height: 60px;
-  outline: 2px solid black;
-  margin: 0; }
+  outline: 2px solid #4e4e4e;
+  margin: 0;
+  background-color: #f368689f; }
 
 .message {
   color: white;
@@ -435,5 +436,10 @@ nav {
   cursor: pointer;
   transform: scale(1.1);
   transition: all .1s; }
+
+.each-slot input {
+  height: 60px;
+  width: 60px;
+  opacity: 0; }
 
 /*# sourceMappingURL=style.css.map */
