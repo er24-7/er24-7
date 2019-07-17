@@ -6,19 +6,15 @@
         <div>
           <h2>ADD SHIFT</h2>
 
-          <form class="form" action="/shifts/create" method="POST">
+          <form class="form" action="/shifts/create/{{department.name}}" method="POST">
             <label>EMPLOYEE:</label>
             <select name="assigned">
               {{#each users}}
               <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
               {{/each}}
             </select>
-            <label>SHIFT STARTING TIME:</label>
-            {{date}}
-            <input type="datetime-local" name="start">
-
-            <label>SHIFT ENDING TIME:</label>
-            <input type="datetime-local" name="end">
+            <label>CODE:</label>
+            <input type="text" name="code">
 
             <button>ADD</button>
           </form>
