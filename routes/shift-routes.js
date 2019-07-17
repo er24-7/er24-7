@@ -31,7 +31,7 @@ router.post('/create/:deptName', (req, res, next) => {
     .then(() => {
 
       req.flash('success', 'shift added')
-      res.redirect('/create/' + req.params.deptName)
+      res.redirect('/shifts/' + req.params.deptName)
     })
     .catch((err) => {
       next(err)
