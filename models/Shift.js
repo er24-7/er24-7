@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const shiftSchema = new Schema({
 
-  start: Date,
-  end: Date,
-  assigned: String // just the name (replace with ID on next version)
+  assigned: { type: Schema.Types.ObjectId, ref: "User" },
+  code: String
 
 })
 
