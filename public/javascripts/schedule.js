@@ -9,9 +9,13 @@ $(document).ready(function () {
       newDiv.setAttribute("class", "each-slot");
       newDiv.innerHTML = `
           <input type="checkbox" id="${arrayOfDaysOfTheWeek[i]}${j}" name="codes" value="${arrayOfDaysOfTheWeek[i]}${j}">
-          <p class="slot-label">${arrayOfDaysOfTheWeek[i]}${j}</p>
         `
       table.appendChild(newDiv);
     }
   }
 });
+
+
+
+
+

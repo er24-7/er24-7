@@ -1,7 +1,7 @@
 <a class="go-back" href="/departments/{{department.name}}"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
 <section class="container">
   <div class="spread-stuff">
-    <form class="form" action="/shifts/{{department.name}}/create" method="POST">
+    <form class="shifts-form form" action="/shifts/{{department.name}}/create" method="POST">
       <div>
         <label>EMPLOYEE:</label>
         <select name="assigned">
@@ -10,21 +10,29 @@
           {{/each}}
         </select>
       </div>
-      <div class="schedule" id="schedule"></div>
+      <div>
+        <div class="days-of-the-week"><p>S</p> <p>M</p> <p>T</p> <p>W</p> <p>T</p> <p>F</p> <p>S</p></div>
+        <div>
+          <div class="schedule" id="schedule"></div>
+          <div class="shifts-of-the-day"><p>9am-5pm</p><p>5pm-1am</p><p>1am-9am</p></div>
+        </div>
+      </div>
       <button class="submit-button">CREATE SHIFTS</button>
     </form>
     <div id="shifts-list">
       {{#each shifts}}
       <b><a href="/users/show/{{this.assigned._id}}">{{this.assigned.firstName}} {{this.assigned.lastName}}</a></b>
-      <p>{{this.codes}}</p>
+      {{#each this.codes}}
+        <p>{{this}}</p>
+      {{/each}}
         <br>
       {{/each}}
       <form action="/shifts/{{department.name}}/delete/all" method="POST">
-        <button>CLEAR ALL SHIFTS</button>
       </form>
     </div>
   </div>
   <div class="side-bar">
+    <button class="clear-button">CLEAR ALL SHIFTS</button>
   </div>
 </section>
 
