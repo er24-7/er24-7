@@ -181,18 +181,28 @@ nav {
 .slot-label {
   margin: 0; }
 
-.each-slot input {
-  display: none; }
-
 .each-slot {
+  box-sizing: border-box;
   border-radius: 8px;
   width: 60px;
   height: 60px;
   margin: 0;
-  background-color: #f368689f; }
+  border: 2px solid #808080; }
 
-.each-slot:hover {
-  background-color: #f36868; }
+.each-slot-1:hover {
+  border: 2px solid #ffd900;
+  background-color: #ffd9004d; }
+
+.each-slot-2:hover {
+  border: 2px solid #20a0eb;
+  background-color: #20a1eb52; }
+
+.each-slot-3:hover {
+  border: 2px solid #263277;
+  background-color: #2632775e; }
+
+.selected {
+  background-color: #f36868c5; }
 
 .message {
   color: white;
@@ -446,6 +456,7 @@ nav {
 
 .each-slot input {
   height: 60px;
-  width: 60px; }
+  width: 60px;
+  opacity: 0; }
 
 /*# sourceMappingURL=style.css.map */
