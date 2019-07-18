@@ -105,29 +105,18 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
+  if (req.user) {
+    if (req.user.role === "ADMIN") {
+      res.locals.isAdmin = req.user.role;
+    }
+    if (req.user.role === "ADMIN" || req.user.role === "MANAGER") {
+      res.locals.isManagerOrAdmin = req.user.role;
+    }
+  }
   res.locals.err = req.flash('error')
   res.locals.yay = req.flash('success')
   next();
 });
-
-function checkRoles(role) {
-  return function (req, res, next) {
-    if (req.isAuthenticated() && req.user.role === role) {
-      return next();
-    } else {
-      res.redirect('/login')
-    }
-  }
-}
-
-
-
-const checkEmployee = checkRoles('EMPLOYEE');
-const checkManager = checkRoles('MANAGER');
-const checkAdmin = checkRoles('ADMIN');
-
-
-
 
 
 const indexRouteVar = require('./routes/index');
