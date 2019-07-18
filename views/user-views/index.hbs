@@ -7,32 +7,44 @@
           <h4>Actions available to you:</h4>
           <ol class="o-list">
             <li>
-              <a href="/users/edit/{{this._id}}">
+              <a href="/users/edit/{{currentUser._id}}">
                 update your phone number
               </a>
             </li>
             <li>
-              <a href="#">
-                [emp/man] check your department schedule
+              <a href="/shifts/{{currentUser.name}}">
+                check your department schedule
               </a>
             </li>
             <li>
-              <a href="#">
-                [adm] see all departments
+            {{#unless isManagerOrAdmin}}
+              <span class="cross-through gray">
+            {{/unless}}
+            {{#if isManagerOrAdmin}}
+              <a href="/departments">
+            {{/if}}
+                see all departments
               </a>
             </li>
             <li>
+            {{#unless isManagerOrAdmin}}
+              <span class="cross-through gray">
+            {{/unless}}
+            {{#if isManagerOrAdmin}}
               <a href="#">
-                [adm] create new dept
+            {{/if}}
+                create new department
               </a>
             </li>
             <li>
+            {{#unless isManagerOrAdmin}}
+              <span class="cross-through gray">
+            {{/unless}}
+            {{#if isManagerOrAdmin}}
               <a href="#">
-                [adm] add/see employee(s)
+            {{/if}}
+                add new employee
               </a>
-            </li>
-            <li>
-              test
             </li>
           </ol>
         </li>

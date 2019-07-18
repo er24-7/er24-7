@@ -446,7 +446,13 @@ nav {
 .o-list {
   list-style: none; }
   .o-list li:before {
-    content: "✓"; }
+    content: "⋅"; }
+
+.o-list a {
+  border-bottom: 1px solid transparent; }
+
+.o-list a:hover {
+  border-bottom: 1px solid black; }
 
 .gray {
   color: gray; }
