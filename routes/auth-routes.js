@@ -63,17 +63,11 @@ router.get('/login', (req, res, next) => {
 })
 
 router.get('/login/demo', (req, res, next) => {
-  // User.findOne({ role: "ADMIN" })
-  // .then((adminUser) => {
   demoUser = {
     email: 'demo@er24-7.com',
     password: 'demo'
   }
   res.render('user-views/login', { demo: demoUser });
-  // })
-  // .catch((err) => {
-  //   next(err)
-  // })
 })
 
 router.post('/login', function (req, res, next) {
@@ -93,7 +87,7 @@ router.post('/login', function (req, res, next) {
 
 router.post('/logout', (req, res, next) => {
   req.logout();
-  res.redirect("/auth/login");
+  res.redirect("/");
 })
 
 
