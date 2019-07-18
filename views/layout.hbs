@@ -24,13 +24,13 @@
         <form action="/to-profile" method="POST">
           <button>Profile</button>
         </form>
-        <form action="/users/logout" method="POST">
+        <form action="/auth/logout" method="POST">
           <button>
             Logout
           </button>
         </form>
         {{else}}
-        <a href="/users/login">Login</a>
+        <a href="/auth/login">Login</a>
         {{/if}}
       </div>
       {{#if currentUser}}

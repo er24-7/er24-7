@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const User = require('../models/User')
 const Department = require('../models/Department')
 
-const passport = require('passport');
+const User = require('../models/User')
+// const bcrypt = require('bcryptjs');
+// const passport = require('passport');
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   } else {
     req.flash('error', 'please login')
-    res.redirect('back')
+    res.redirect('/auth/login')
     // will need to figure out where to redirect
   }
 }
@@ -128,42 +128,7 @@ router.post('/delete/:id', ensureAuthenticated, (req, res, next) => {
 
 
 
-// MOVE TO AUTH ROUTES
 
-router.get('/login', (req, res, next) => {
-  res.render('user-views/login');
-})
-
-router.post('/login', function (req, res, next) {
-  passport.authenticate('local', function (err, user, info) {
-    if (err) { return next(err); }
-    // Redirect if it fails
-    if (!user) { return res.redirect('/users/login'); }
-    req.logIn(user, function (err) {
-      if (err) { return next(err); }
-      // Redirect if it succeeds
-      return res.redirect('/users')
-      // User.findById(user._id).populate('department')
-      //   .then((theUser) => {
-      //     if (theUser.role == "MAN") {
-      //       return res.redirect('/departments/' + theUser.department.name)
-      //     } else {
-      //       return res.redirect('/users/show/' + theUser._id)
-
-      //     }
-      //   })
-      //   .catch((err) => {
-      //     return next(err)
-      //   })
-    });
-  })(req, res, next);
-});
-
-
-router.post('/logout', (req, res, next) => {
-  req.logout();
-  res.redirect("/users/login");
-})
 
 
 module.exports = router;
