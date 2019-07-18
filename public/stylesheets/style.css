@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   padding: 0;
   margin: 0;
@@ -15,7 +16,7 @@ nav a {
   font-weight: 400;
   font-size: 1.8rem; }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links button:hover {
   transform: scale(1.1);
   transition: all 0.5s; }
 
@@ -254,7 +255,7 @@ nav {
   background-color: #ff7158b3;
   border-radius: 16px;
   padding-left: 0.8rem;
-  line-height: 34px;
+  line-height: 36.3px;
   height: 34.3px; }
 
 .go-back:hover {
@@ -262,7 +263,22 @@ nav {
   background-color: #ff8d79;
   transition: all .1s; }
   .go-back:hover .previous-page:after {
+    position: relative;
+    top: -3px;
     content: "previous page"; }
+  .go-back:hover .arrow {
+    position: relative;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-duration: .5s; }
+
+@keyframes bounce {
+  0% {
+    left: -3px; }
+  80% {
+    left: 5px; }
+  100% {
+    left: -3px; } }
 
 .delete-button {
   border: 2px solid #e73617b4;
@@ -309,13 +325,16 @@ nav {
   background-color: #ffffff;
   transition: all .5s; }
 
-.center-stuff {
+.center-stuff, .center-stuff-2 {
   text-align: right;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center; }
+
+.center-stuff-2 > * {
+  padding: 50px 40px; }
 
 .spread-stuff {
   text-align: right;
@@ -418,5 +437,21 @@ nav {
   height: 60px;
   width: 60px;
   opacity: 0; }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  text-align: left; }
+
+.o-list {
+  list-style: none; }
+  .o-list li:before {
+    content: "✓"; }
+
+.gray {
+  color: gray; }
+
+.cross-through {
+  text-decoration: line-through; }
 
 /*# sourceMappingURL=style.css.map */

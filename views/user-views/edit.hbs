@@ -1,4 +1,4 @@
-<a class="go-back" href="/users/show/{{user._id}}">⇦<span class="previous-page"> </span></a>
+<a class="go-back" href="/users/show/{{user._id}}"><span class="arrow">⇦</span><span class="previous-page"> </span></a>
 <section class="container">
   <div class="spread-stuff">
     <div>
@@ -22,7 +22,6 @@
         <div>
           <label>Department: </label>
           <select name="department">
-            <option>Select Later</option>
             {{#each departments}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
