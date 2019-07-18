@@ -258,12 +258,12 @@ nav {
   flex-direction: column;
   padding: 10px;
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #b4b4b4;
+  border-radius: 15px;
+  border: 4px solid #afafaf;
 }
 
 .each-department:hover {
-  box-shadow: 10px 10px 10px #000000;
+  border: 4px solid #808080;
 }
 
 .each-department a:first-child {
