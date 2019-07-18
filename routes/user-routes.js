@@ -76,7 +76,11 @@ router.get('/show/:id', ensureAuthenticated, (req, res, next) => {
   User.findById(req.params.id).populate('department')
     .then((theUser) => {
       let isMine = theUser._id.equals(req.user._id);
-      res.render('user-views/show', { user: theUser, isMine })
+      let canEdit;
+      if (isMine || req.user.role === "ADMIN" || (req.user.role === "MANAGER" && theUser.role !== "ADMIN")) {
+        canEdit = true;
+      }
+      res.render('user-views/show', { user: theUser, canEdit })
     })
     .catch((err) => {
       next(err)
@@ -89,10 +93,11 @@ router.get('/edit/:id', ensureAuthenticated, (req, res, next) => {
       User.findById(req.params.id).populate('department')
         .then((theUser) => {
           allDepartments.forEach((eachDepartment) => {
-            if (eachDepartment._id.equals(theUser.department)) {
+            if (eachDepartment._id.equals(theUser.department._id)) {
               eachDepartment.correctDepartment = true;
             }
           })
+          // res.send(allDepartments);
           res.render('user-views/edit', { user: theUser, departments: allDepartments })
         })
         .catch((err) => {

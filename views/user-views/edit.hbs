@@ -32,13 +32,16 @@
             {{/each}}
           </select>
         </div>
+        {{#if isAdmin}}
         <div>
           <label>Role: </label>
           <select name="role">
             <option value="EMPLOYEE">Employee</option>
             <option value="MANAGER">Manager</option>
+            <option value="ADMIN">Admin</option>
           </select>
         </div>
+        {{/if}}
         <button class="submit-button">UPDATE</button>
       </form>
     </div>
