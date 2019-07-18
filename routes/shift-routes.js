@@ -17,13 +17,13 @@ router.get('/:deptName', (req, res, next) => {
             .then((allShiftsWithinDepartment) => {
 
               allShiftsWithinDepartment.forEach((eachShift) => {
-                eachShift.codes.forEach(eachCode => {
-                  eachCode = "something";
-                  eachCode.blah = "blah"
+                eachShift.codes.forEach((eachCode) => {
+                  eachCode = "blah"
                   console.log(eachCode)
-                  console.log(eachCode.blah)
                 })
+                console.log(eachShift)
               })
+              console.log(allShiftsWithinDepartment)
               res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
             })
             .catch((err) => {

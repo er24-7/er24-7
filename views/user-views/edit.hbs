@@ -3,6 +3,7 @@
   <div class="spread-stuff">
     <div>
       <form action="/users/edit/{{user._id}}" method="POST">
+        {{#if isManagerOrAdmin}}
         <div>
           <label>First Name: </label>
           <input type="text" name="firstName" value="{{user.firstName}}">
@@ -15,10 +16,12 @@
           <label>E-mail: </label>
           <input type="text" name="email" value="{{user.email}}">
         </div>
+        {{/if}}
         <div>
           <label>Phone: </label>
           <input type="text" name="phone" value="{{user.phone}}">
         </div>
+        {{#if isManagerOrAdmin}}
         <div>
           <label>Department: </label>
           <select name="department">
@@ -32,6 +35,7 @@
             {{/each}}
           </select>
         </div>
+        {{/if}}
         {{#if isAdmin}}
         <div>
           <label>Role: </label>
