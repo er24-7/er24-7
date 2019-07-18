@@ -51,15 +51,48 @@ router.get('/:deptName', (req, res, next) => {
 });
 
 router.post('/:deptName/create', (req, res, next) => {
-  Shifts.create(req.body)
-    .then(() => {
-      req.flash('success', 'shift added')
-      res.redirect('/shifts/' + req.params.deptName)
-    })
-    .catch(() => {
-      req.flash('error', 'code incorrect')
-      res.redirect('/shifts/' + req.params.deptName)
+  Shifts.findOne({ assigned: req.body.assigned })
+    .then((theCreatedShift) => {
+      if (theCreatedShift == null) {
+        Shifts.create(req.body)
+          .then(() => {
+            req.flash('success', 'shift added')
+            res.redirect('/shifts/' + req.params.deptName)
+          })
+          .catch(() => {
+            req.flash('error', 'code incorrect')
+            res.redirect('/shifts/' + req.params.deptName)
 
+          })
+      } else {
+        let theUpdatedShifts = theCreatedShift.codes;
+        let theCurrentShifts = req.body.codes;
+        if (typeof theCurrentShifts === "string") {
+          if (!(theUpdatedShifts.includes(theCurrentShifts))) {
+            theUpdatedShifts.push(theCurrentShifts)
+          }
+        } else {
+          for (let i = 0; i < theCurrentShifts.length; i++) {
+            if (!(theUpdatedShifts.includes(theCurrentShifts[i]))) {
+              theUpdatedShifts.push(theCurrentShifts[i])
+            }
+          }
+        }
+        Shifts.findByIdAndUpdate(theCreatedShift.id, {
+          assigned: req.body.assigned,
+          codes: theUpdatedShifts
+        })
+          .then(() => {
+            req.flash('success', 'shift updated')
+            res.redirect('/shifts/' + req.params.deptName)
+          })
+          .catch(() => {
+            req.flash('error', 'code incorrect')
+            res.redirect('/shifts/' + req.params.deptName)
+
+          })
+
+      }
     })
 });
 
