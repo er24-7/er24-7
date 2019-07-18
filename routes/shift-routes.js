@@ -8,6 +8,16 @@ moment().format()
 
 /* GET shifts page*/
 router.get('/:deptName', (req, res, next) => {
+  let theDays = {
+    su: "Sunday",
+    mo: "Monday",
+    tu: "Tuesday",
+    we: "Wednesday",
+    th: "Thursday",
+    fr: "Friday",
+    sa: "Saturday"
+  }
+  let theShift = ['9am-5pm', '5pm-1am', '1am-9am']
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
       // res.send(theDepartment._id)
@@ -15,8 +25,16 @@ router.get('/:deptName', (req, res, next) => {
         .then((allUsers) => {
           Shifts.find({ assigned: allUsers }).populate('assigned')
             .then((allShiftsWithinDepartment) => {
-              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
 
+              allShiftsWithinDepartment.forEach((eachShift) => {
+                eachShift.codes = eachShift.codes.map((eachCode) => {
+                  let sec1 = eachCode.slice(0, 2)
+                  let sec2 = eachCode.slice(2)
+                  return (`${theDays[sec1]}, ${theShift[sec2 - 1]}`)
+                })
+              })
+              // console.log(allShiftsWithinDepartment)
+              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
             })
             .catch((err) => {
               next(err)
