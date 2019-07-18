@@ -29,7 +29,7 @@ function checkRoles(role1, role2) {
     if (req.isAuthenticated() && req.user.role === role1 || req.user.role == role2) {
       return next();
     } else {
-      req.flash('error', `you need to be an ${role1} or ${role2}for that`)
+      req.flash('error', `you need to be an admin or manager to access that area`)
       res.redirect('/users')
     }
   }
@@ -107,7 +107,7 @@ router.post('/:deptName/update', (req, res, render) => {
 router.post('/:deptName/delete', (req, res, render) => {
   Department.findOneAndDelete({ name: req.params.deptName })
     .then(() => {
-      req.flash('success', 'Department successfully delete')
+      req.flash('success', 'Department successfully deleted')
       res.redirect('/departments')
     })
     .catch((err) => {
