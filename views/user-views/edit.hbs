@@ -22,6 +22,7 @@
         <div>
           <label>Department: </label>
           <select name="department">
+            <option>Select Later</option>
             {{#each departments}}
             <option value="{{this._id}}">{{this.name}}</option>
             {{/each}}
