@@ -110,17 +110,42 @@ app.use((req, res, next) => {
   next();
 });
 
+function checkRoles(role) {
+  return function (req, res, next) {
+    if (req.isAuthenticated() && req.user.role === role) {
+      return next();
+    } else {
+      res.redirect('/login')
+    }
+  }
+}
+
+const checkEmployee = checkRoles('EMPLOYEE');
+const checkManager = checkRoles('MANAGER');
+const checkAdmin = checkRoles('ADMIN');
+
+
+
+
+
 const indexRouteVar = require('./routes/index');
 app.use('/', indexRouteVar);
 
-const userRouteVar = require('./routes/user-routes');
-app.use('/users', userRouteVar);
 
 const shiftRouteVar = require('./routes/shift-routes');
 app.use('/shifts', shiftRouteVar);
 
 const departmentRouteVar = require('./routes/department-routes');
 app.use('/departments', departmentRouteVar);
+
+const userRouteVar = require('./routes/user-routes');
+app.use('/users', userRouteVar);
+
+const authRouteVar = require('./routes/auth-routes');
+app.use('/auth', authRouteVar);
+
+const adminRouteVar = require('./routes/admin-routes');
+app.use('/admin', adminRouteVar);
 
 
 module.exports = app;

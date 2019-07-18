@@ -6,13 +6,22 @@ const Department = require('../models/Department')
 
 const passport = require('passport');
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    req.flash('error', 'please login')
+    res.redirect('back')
+    // will need to figure out where to redirect
+  }
+}
 
 /* GET user page */
-router.get('/', (req, res, next) => {
+router.get('/', ensureAuthenticated, (req, res, next) => {
   res.render('user-views/index');
 });
 
-router.get('/create', (req, res, next) => {
+router.get('/create', ensureAuthenticated, (req, res, next) => {
   Department.find()
     .then((allDepartments) => {
       User.find()
@@ -30,7 +39,7 @@ router.get('/create', (req, res, next) => {
     })
 })
 
-router.post('/create', (req, res, next) => {
+router.post('/create', ensureAuthenticated, (req, res, next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
@@ -63,7 +72,7 @@ router.post('/create', (req, res, next) => {
     })
 })
 
-router.get('/show/:id', (req, res, next) => {
+router.get('/show/:id', ensureAuthenticated, (req, res, next) => {
   User.findById(req.params.id).populate('department')
     .then((theUser) => {
       res.render('user-views/show', { user: theUser })
@@ -73,7 +82,7 @@ router.get('/show/:id', (req, res, next) => {
     })
 })
 
-router.get('/edit/:id', (req, res, next) => {
+router.get('/edit/:id', ensureAuthenticated, (req, res, next) => {
   Department.find()
     .then((allDepartments) => {
       User.findById(req.params.id).populate('department')
@@ -90,7 +99,7 @@ router.get('/edit/:id', (req, res, next) => {
 
 })
 
-router.post('/edit/:id', (req, res, next) => {
+router.post('/edit/:id', ensureAuthenticated, (req, res, next) => {
   User.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       req.flash('success', 'User successfully edited')
@@ -105,7 +114,7 @@ router.post('/edit/:id', (req, res, next) => {
     })
 })
 
-router.post('/delete/:id', (req, res, next) => {
+router.post('/delete/:id', ensureAuthenticated, (req, res, next) => {
   User.findByIdAndDelete(req.params.id)
     .then(() => {
       req.flash('success', 'User successfully deleted')
@@ -116,6 +125,10 @@ router.post('/delete/:id', (req, res, next) => {
     })
 
 })
+
+
+
+// MOVE TO AUTH ROUTES
 
 router.get('/login', (req, res, next) => {
   res.render('user-views/login');

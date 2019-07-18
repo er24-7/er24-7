@@ -9,7 +9,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   phone: String,
   department: { type: Schema.Types.ObjectId, ref: "Department" },
-  role: { type: String, enum: ["ADM", "MAN", "EMP"] },
+  role: { type: String, enum: ["ADMIN", "MANAGER", "EMPLOYEE"], default: "EMPLOYEE" },
   // shifts: [{ type: Schema.Types.ObjectId, ref: "Shift" }]
 
 })
