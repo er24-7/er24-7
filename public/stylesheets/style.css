@@ -89,13 +89,13 @@ nav {
 
 .logo {
   margin-left: 2rem;
-  width: 84.3px;
-  border-bottom: 4px solid #e73617af;
+  width: 146.3px;
+  border-bottom: 6px solid #e73617af;
   color: #505050;
-  height: 60px;
-  font-size: 2rem;
-  font-weight: 500;
-  letter-spacing: -.27rem; }
+  height: 68.8px;
+  font-size: 3.3rem;
+  font-weight: 600;
+  letter-spacing: -0.47rem; }
 
 .logo2 {
   margin-left: 0;
@@ -298,26 +298,29 @@ nav {
   color: #e73617; }
 
 .land-style {
+  display: flex;
   height: 100vh;
   background-image: linear-gradient(-127deg, transparent 66%, #e7361717 73%), linear-gradient(-130deg, transparent 66%, #e7361717 73%), linear-gradient(-133deg, transparent 66%, #e7361717 73%), linear-gradient(-136deg, transparent 66%, #e7361717 73%), linear-gradient(-139deg, transparent 66%, #e7361717 73%), linear-gradient(-142deg, transparent 66%, #e7361717 73%), linear-gradient(-145deg, transparent 66%, #e7361717 73%), linear-gradient(-148deg, transparent 66%, #e7361717 73%), linear-gradient(-151deg, transparent 66%, #e7361717 73%), linear-gradient(-154deg, transparent 66%, #e7361717 73%), linear-gradient(-157deg, transparent 66%, #e7361717 73%), linear-gradient(-160deg, transparent 66%, #e7361717 73%), linear-gradient(-163deg, transparent 66%, #e7361717 73%); }
 
 .land-style-2 {
   height: 100vh;
-  background-image: url("/images/hospital-pic.jpeg");
+  background-image: url(https://images.unsplash.com/photo-1531346680769-a1d79b57de5c);
   background-size: 100vw auto;
-  background-position: bottom;
+  background-position-y: -906px;
   background-repeat: no-repeat; }
 
 .land-positioning {
-  width: 60%;
-  font-size: 1.5rem;
+  width: 100%;
+  font-size: 2rem;
   text-align: right;
-  padding: 123px 74px;
-  font-weight: 500;
+  align-self: center;
+  justify-content: space-evenly;
+  padding: 0 30% 0 15%;
   color: black; }
 
 .land-positioning p {
-  margin: 0; }
+  margin: 0;
+  padding-bottom: 90px; }
 
 .demo-btn {
   position: absolute;
