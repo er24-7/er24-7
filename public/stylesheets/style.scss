@@ -260,6 +260,14 @@ nav {
   display: inherit;
 }
 
+.aligned-btns, .aligned-btns button {
+  height: fit-content;
+}
+
+.aligned-btns {
+  align-self: flex-start;
+}
+
 .edit-button {
   color: white;
   background-color: #e73617;

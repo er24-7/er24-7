@@ -46,7 +46,12 @@
       <a href="/users/show/{{this._id}}">
         {{this.firstName}} {{this.lastName}}
       </a>
-      <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
+      <div class="btns aligned-btns">
+        <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
+        <form action="/users/delete/{{this._id}}" method="POST">
+          <button class="submit-button">DELETE</button>
+        </form>
+      </div>
       <br>
       {{/each}}
     </div>
