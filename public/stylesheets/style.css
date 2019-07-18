@@ -26,33 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   line-height: 90px;
-  background-color: #6b6b6b4d; }
-
-.go-back-btn {
-  width: 40px; }
-
-.go-back-btn:hover {
-  transform: scale(3);
-  position: relative;
-  animation-name: blah;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-  animation-duration: .5s; }
-
-@keyframes blah {
-  0% {
-    left: 30px; }
-  85% {
-    left: 40px; }
-  100% {
-    left: 30px; } }
-
-.temporary-button {
-  position: absolute;
-  top: 88px;
-  left: 21px;
-  text-shadow: 1px 1px 0 white, -1px -1px 0 white;
-  font-weight: 700; }
+  background-color: #e6e6e69e; }
 
 .login-info img {
   outline: 5px solid white;
@@ -129,36 +103,6 @@ nav {
   position: absolute;
   top: 100px;
   left: 100px; }
-
-.board {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.911);
-  box-shadow: 3px 3px 10px black;
-  width: 95%;
-  height: 90%; }
-
-.board2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 95%;
-  text-align: left; }
-
-.board3 {
-  display: flex; }
-
-.board3 * {
-  width: 75%; }
-
-.board3 form {
-  display: flex;
-  flex-direction: column; }
-
-.board3 form * {
-  margin-bottom: 20px; }
 
 .each-shift {
   width: 250px;
@@ -301,8 +245,24 @@ nav {
 
 .go-back {
   position: absolute;
-  top: 70px;
-  left: 20px; }
+  top: 95px;
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+  left: 20px;
+  width: 37.8px;
+  background-color: #ff7158b3;
+  border-radius: 16px;
+  padding-left: 0.8rem;
+  line-height: 34px;
+  height: 34.3px; }
+
+.go-back:hover {
+  width: 159px;
+  background-color: #ff8d79;
+  transition: all .1s; }
+  .go-back:hover .previous-page:after {
+    content: "previous page"; }
 
 .delete-button {
   border: 2px solid #e73617b4;
@@ -310,8 +270,10 @@ nav {
 
 .land-style {
   display: flex;
-  height: 100vh;
-  background-image: linear-gradient(-127deg, transparent 66%, #e7361717 73%), linear-gradient(-130deg, transparent 66%, #e7361717 73%), linear-gradient(-133deg, transparent 66%, #e7361717 73%), linear-gradient(-136deg, transparent 66%, #e7361717 73%), linear-gradient(-139deg, transparent 66%, #e7361717 73%), linear-gradient(-142deg, transparent 66%, #e7361717 73%), linear-gradient(-145deg, transparent 66%, #e7361717 73%), linear-gradient(-148deg, transparent 66%, #e7361717 73%), linear-gradient(-151deg, transparent 66%, #e7361717 73%), linear-gradient(-154deg, transparent 66%, #e7361717 73%), linear-gradient(-157deg, transparent 66%, #e7361717 73%), linear-gradient(-160deg, transparent 66%, #e7361717 73%), linear-gradient(-163deg, transparent 66%, #e7361717 73%); }
+  height: 100vh; }
+
+.land-style-3 {
+  background-image: linear-gradient(-127deg, transparent 66%, #e736170a 73%), linear-gradient(-130deg, transparent 66%, #e736170a 73%), linear-gradient(-133deg, transparent 66%, #e736170a 73%), linear-gradient(-136deg, transparent 66%, #e736170a 73%), linear-gradient(-139deg, transparent 66%, #e736170a 73%), linear-gradient(-142deg, transparent 66%, #e736170a 73%), linear-gradient(-145deg, transparent 66%, #e736170a 73%), linear-gradient(-148deg, transparent 66%, #e736170a 73%), linear-gradient(-151deg, transparent 66%, #e736170a 73%), linear-gradient(-154deg, transparent 66%, #e736170a 73%), linear-gradient(-157deg, transparent 66%, #e736170a 73%), linear-gradient(-160deg, transparent 66%, #e736170a 73%), linear-gradient(-163deg, transparent 66%, #e736170a 73%); }
 
 .land-style-2 {
   height: 100vh;
@@ -341,11 +303,9 @@ nav {
   font-weight: 700;
   border: 4px solid black;
   padding: 1rem;
-  background-color: #ffffff8a;
-  box-shadow: 10px 10px 10px grey; }
+  background-color: #ffffff8a; }
 
 .demo-btn:hover {
-  box-shadow: 10px 10px 10px black;
   background-color: #ffffff;
   transition: all .5s; }
 
@@ -365,8 +325,9 @@ nav {
   width: 100%;
   justify-content: space-around; }
 
-.spread-stuff > *:first-child {
-  height: 500px; }
+.spread-stuff > * {
+  height: 425px;
+  width: 50%; }
 
 .spread-stuff input, .center-stuff input, .spread-stuff select, .center-stuff select {
   font-size: 1.3rem;
@@ -401,8 +362,7 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 350px;
-  height: 500px; }
+  width: 350px; }
 
 #employee-list .submit-button {
   width: fit-content;
