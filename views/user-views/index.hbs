@@ -19,16 +19,16 @@
               </a>
             </li>
 
-            {{!-- <li>
-            {{#unless isManagerOrAdmin}}
-              <a href="/shifts/{{currentUser.department.name}}">
-            {{/unless}}
-            {{#if isManagerOrAdmin}}
-              <span class="cross-through gray">
-            {{/if}}
-                check your department schedule
+            <li>
+              {{#unless isManagerOrAdmin}}
+              <a href="/shifts/{{user.department.name}}">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
+                <span class="cross-through gray">
+                  {{/if}}
+                  check your department schedule
               </a>
-            </li> --}}
+            </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
