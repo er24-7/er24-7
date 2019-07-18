@@ -42,6 +42,11 @@
       {{/if}}
     </div>
   </nav>
+  {{#if currentUser}}
+    <button class="go-back" onclick="goBack()"><span class="arrow">⇦</span><span class="previous-page"> </span></button>
+  {{/if}}
+
+
 
 
   {{#if yay}}
@@ -55,6 +60,11 @@
   {{!-- <div class="message">Test message111111111111111111111111111111</div> --}}
   {{{body}}}
 
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>

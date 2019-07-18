@@ -318,22 +318,39 @@ nav {
   position: absolute;
   top: 95px;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 200;
   color: white;
-  left: 20px;
+  left: 25px;
   width: 37.8px;
   background-color: #ff7158b3;
+  border: 0;
   border-radius: 16px;
-  padding-left: 0.8rem;
+  padding-left: 0.4rem;
   line-height: 36.3px;
-  height: 34.3px;
+  height: 36.3px;
 }
+
+// .go-back {
+//   position: absolute;
+//   top: 95px;
+//   margin: 0;
+//   font-size: 1.3rem;
+//   color: white;
+//   left: 20px;
+//   width: 37.8px;
+//   background-color: #ff7158b3;
+//   border-radius: 16px;
+//   padding-left: 0.8rem;
+//   line-height: 36.3px;
+//   height: 34.3px;
+// }
 
 
 .go-back:hover {
   .previous-page:after {
     position: relative;
-    top: -3px;
+    top: -2px;
     content: "previous page";
   }
   .arrow {
