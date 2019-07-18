@@ -39,7 +39,7 @@ const checkAdmin = checkRoles('ADMIN');
 const checkAdminOrManager = checkRoles('ADMIN', 'MANAGER');
 
 router.get('/', checkAdmin, (req, res, render) => {
-  Department.find()
+  Department.find().sort({ name: 1 })
     .then((allDepartments) => {
       res.render('department-views/all-departments', { departments: allDepartments })
     })
@@ -70,7 +70,7 @@ router.post('/create', (req, res, render) => {
 router.get('/:deptName', ensureAuthenticated, (req, res, render) => {
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
-      User.find({ department: theDepartment._id })
+      User.find({ department: theDepartment._id }).sort({ firstName: 1 })
         .then((allUsers) => {
           res.render('department-views/one-department', { department: theDepartment, users: allUsers })
         })

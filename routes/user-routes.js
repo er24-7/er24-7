@@ -18,7 +18,13 @@ function ensureAuthenticated(req, res, next) {
 
 /* GET user page */
 router.get('/', ensureAuthenticated, (req, res, next) => {
-  res.render('user-views/index');
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+  console.log(req.user._id)
+  User.findById(req.user._id).populate('department')
+    .then((theUser) => {
+      console.log(theUser.department.name)
+      res.render('user-views/index', { user: theUser });
+    })
 });
 
 router.get('/create', ensureAuthenticated, (req, res, next) => {

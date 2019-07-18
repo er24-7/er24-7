@@ -8,36 +8,37 @@
           <ol class="o-list">
             <li>
               <a href="/users/show/{{currentUser._id}}">
-              see your profile
+                see your profile
               </a>
             </li>
 
-            {{!-- <li>
-              <a href="/users/edit/{{currentUser._id}}">
-                update your {{#unless isManagerOrAdmin}}phone number{{/unless}}{{#if isManagerOrAdmin}}personal information{{/if}}
-              </a>
-            </li> --}}
-            
-            {{!-- <li>
-            {{#unless isManagerOrAdmin}}
-              <a href="/shifts/{{currentUser.department.name}}">
-            {{/unless}}
-            {{#if isManagerOrAdmin}}
-              <span class="cross-through gray">
-            {{/if}}
-                check your department schedule
-              </a>
-            </li> --}}
-            
             <li>
-            {{#unless isManagerOrAdmin}}
-              <span class="cross-through gray">
-            {{/unless}}
-            {{#if isManagerOrAdmin}}
-              <a href="/departments">
-            {{/if}}
-                see all departments
+              <a href="/users/edit/{{currentUser._id}}">
+                update your {{#unless isManagerOrAdmin}}phone number{{/unless}}{{#if isManagerOrAdmin}}personal
+                information{{/if}}
               </a>
+            </li>
+
+            <li>
+              {{#unless isManagerOrAdmin}}
+              <a href="/shifts/{{user.department.name}}">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
+                <span class="cross-through gray">
+                  {{/if}}
+                  check your department schedule
+              </a>
+            </li>
+
+            <li>
+              {{#unless isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
+                <a href="/departments">
+                  {{/if}}
+                  see all departments
+                </a>
             </li>
 
             {{!-- <li>
@@ -52,67 +53,67 @@
             </li> --}}
 
             <li>
-            {{#unless isManagerOrAdmin}}
+              {{#unless isManagerOrAdmin}}
               <span class="cross-through gray">
-            {{/unless}}
-            {{#if isManagerOrAdmin}}
-              <a href="/departments/create">
-            {{/if}}
-                create new department
-              </a>
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
+                <a href="/departments/create">
+                  {{/if}}
+                  create new department
+                </a>
             </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
-                <span class="cross-through gray">
-              {{/unless}}
-              {{#if isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
                 <a href="/departments">
-              {{/if}}
+                  {{/if}}
                   delete a department
                 </a>
             </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
-                <span class="cross-through gray">
-              {{/unless}}
-              {{#if isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
                 <a href="/users/create">
-              {{/if}}
+                  {{/if}}
                   see all employees
                 </a>
             </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
-                <span class="cross-through gray">
-              {{/unless}}
-              {{#if isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
                 <a href="/users/create">
-              {{/if}}
+                  {{/if}}
                   update employees' information
                 </a>
             </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
-                <span class="cross-through gray">
-              {{/unless}}
-              {{#if isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
                 <a href="/users/create">
-              {{/if}}
+                  {{/if}}
                   add new employee
                 </a>
             </li>
 
             <li>
               {{#unless isManagerOrAdmin}}
-                <span class="cross-through gray">
-              {{/unless}}
-              {{#if isManagerOrAdmin}}
+              <span class="cross-through gray">
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
                 <a href="/users/create">
-              {{/if}}
+                  {{/if}}
                   delete an employee
                 </a>
             </li>
