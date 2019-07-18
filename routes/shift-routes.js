@@ -15,8 +15,16 @@ router.get('/:deptName', (req, res, next) => {
         .then((allUsers) => {
           Shifts.find({ assigned: allUsers }).populate('assigned')
             .then((allShiftsWithinDepartment) => {
-              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
 
+              allShiftsWithinDepartment.forEach((eachShift) => {
+                eachShift.codes.forEach(eachCode => {
+                  eachCode = "something";
+                  eachCode.blah = "blah"
+                  console.log(eachCode)
+                  console.log(eachCode.blah)
+                })
+              })
+              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
             })
             .catch((err) => {
               next(err)
