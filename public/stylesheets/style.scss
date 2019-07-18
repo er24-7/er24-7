@@ -215,20 +215,21 @@ nav {
 }
 
 
+.each-slot input {
+ display: none;
+}
+
 .each-slot {
+  border-radius: 8px;
   width: 60px;
   height: 60px;
   margin: 0;
   background-color: #f368689f;
 }
 
-.each-slot:focus, .each-slot:active, .each-slot:visited {
-  background-color: black;
+.each-slot:hover {
+  background-color: #f36868;
 }
-
-// .each-slot:hover {
-//   background-color: #414141;
-// }
 
 .message {
   color: white;
