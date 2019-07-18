@@ -11,7 +11,7 @@ router.get('/create', (req, res, next) => {
     .then((allDepartments) => {
       User.find()
         .then((allUsers) => {
-          res.render('user-views/create', { users: allUsers, departments: allDepartments })
+          res.render('user-views/create', { users: allUsers.reverse(), departments: allDepartments })
 
         })
         .catch((err) => {
