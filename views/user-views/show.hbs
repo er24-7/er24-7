@@ -9,7 +9,10 @@
     <li>Role: {{user.role}}</li>
   </ul>
 
+  {{#if isMine}}
   <a href="/users/edit/{{user._id}}">Edit Employee</a>
+  {{/if}}
+
 
   <h6>
     <a href="/departments/{{user.department.name}}">Go Back</a>

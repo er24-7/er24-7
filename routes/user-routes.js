@@ -75,7 +75,8 @@ router.post('/create', ensureAuthenticated, (req, res, next) => {
 router.get('/show/:id', ensureAuthenticated, (req, res, next) => {
   User.findById(req.params.id).populate('department')
     .then((theUser) => {
-      res.render('user-views/show', { user: theUser })
+      let isMine = theUser._id.equals(req.user._id);
+      res.render('user-views/show', { user: theUser, isMine })
     })
     .catch((err) => {
       next(err)
@@ -87,6 +88,11 @@ router.get('/edit/:id', ensureAuthenticated, (req, res, next) => {
     .then((allDepartments) => {
       User.findById(req.params.id).populate('department')
         .then((theUser) => {
+          allDepartments.forEach((eachDepartment) => {
+            if (eachDepartment._id.equals(theUser.department)) {
+              eachDepartment.correctDepartment = true;
+            }
+          })
           res.render('user-views/edit', { user: theUser, departments: allDepartments })
         })
         .catch((err) => {

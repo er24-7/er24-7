@@ -1,38 +1,54 @@
 <a class="go-back" href="/departments/{{department.name}}"><span class="arrow">⇦</span><span class="previous-page"> </span></a>
 <section class="container">
   <div class="spread-stuff">
+    {{#if isManagerOrAdmin}}
     <form class="shifts-form form" action="/shifts/{{department.name}}/create" method="POST">
       <div>
         <label>EMPLOYEE:</label>
         <select name="assigned">
           {{#each users}}
-            <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
+          <option value="{{this._id}}">{{this.firstName}} {{this.lastName}}</option>
           {{/each}}
         </select>
       </div>
       <div>
-        <div class="days-of-the-week"><p>S</p> <p>M</p> <p>T</p> <p>W</p> <p>T</p> <p>F</p> <p>S</p></div>
+        <div class="days-of-the-week">
+          <p>S</p>
+          <p>M</p>
+          <p>T</p>
+          <p>W</p>
+          <p>T</p>
+          <p>F</p>
+          <p>S</p>
+        </div>
         <div>
           <div class="schedule" id="schedule"></div>
-          <div class="shifts-of-the-day"><p>9am-5pm</p><p>5pm-1am</p><p>1am-9am</p></div>
+          <div class="shifts-of-the-day">
+            <p>9am-5pm</p>
+            <p>5pm-1am</p>
+            <p>1am-9am</p>
+          </div>
         </div>
       </div>
       <button class="submit-button">CREATE SHIFTS</button>
     </form>
+    {{/if}}
     <div id="shifts-list">
       {{#each shifts}}
       <b><a href="/users/show/{{this.assigned._id}}">{{this.assigned.firstName}} {{this.assigned.lastName}}</a></b>
       {{#each this.codes}}
-        <p>{{this}}</p>
+      <p>{{this}}</p>
       {{/each}}
-        <br>
+      <br>
       {{/each}}
     </div>
   </div>
   <div class="side-bar">
+    {{#if isManagerOrAdmin}}
     <form action="/shifts/{{department.name}}/delete/all" method="POST">
       <button class="clear-button">CLEAR ALL SHIFTS</button>
     </form>
+    {{/if}}
   </div>
 </section>
 
