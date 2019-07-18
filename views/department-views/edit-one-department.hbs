@@ -1,24 +1,15 @@
 <a class="go-back" href="/departments/{{department.name}}"><span class="arrow">⇦</span><span class="previous-page"> </span></a>
 <section class="container">
   <div class="center-stuff">
-    <form action="/departments/{{department.name}}/update" method="POST">
-    <h2>Edit {{department.name}}</h2>
+    <form class="edit-dept-title" action="/departments/{{department.name}}/update" method="POST">
+    <p>{{department.name}}</p>
     <div>
-      <label>Update Name:</label>
+      <label>New department name:</label>
       <input type="text" value="{{department.name}}">
-    </div>
-    <div>
-      <label>Change Manager</label>
-      <input type="text"> {{!-- ADD VALUE LATER --}}
-    </div>
-    <div>
-      <label>Add Employees</label>
-      <input type="text"> {{!-- ADD VALUE LATER --}}
     </div>
       <button class="submit-button">UPDATE</button>
     </form>
   </div>
   <div class="side-bar">
-    {{!-- <p>Random text.</p> --}}
   </div>
 </section>

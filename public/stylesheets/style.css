@@ -185,7 +185,7 @@ nav {
 .manager-bold {
   font-weight: 500; }
 
-.you p {
+.you p, .edit-dept-title p {
   font-size: 2.5rem;
   margin: 1rem;
   text-align: center; }
