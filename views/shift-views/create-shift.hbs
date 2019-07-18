@@ -27,12 +27,12 @@
       {{/each}}
         <br>
       {{/each}}
-      <form action="/shifts/{{department.name}}/delete/all" method="POST">
-      </form>
     </div>
   </div>
   <div class="side-bar">
-    <button class="clear-button">CLEAR ALL SHIFTS</button>
+    <form action="/shifts/{{department.name}}/delete/all" method="POST">
+      <button class="clear-button">CLEAR ALL SHIFTS</button>
+    </form>
   </div>
 </section>
 

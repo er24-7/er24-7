@@ -225,6 +225,14 @@ nav {
   background-color: #f368689f;
 }
 
+.each-slot:focus, .each-slot:active {
+  background-color: black;
+}
+
+// .each-slot:hover {
+//   background-color: #414141;
+// }
+
 .message {
   color: white;
   padding-right: 10px;
@@ -473,7 +481,7 @@ nav {
   flex-direction: column;
   text-align: left;
   width: 350px;
-  max-height: 500px;
+  height: 500px;
 }
 
 #employee-list .submit-button {
@@ -540,5 +548,5 @@ nav {
 .each-slot input {
   height: 60px;
   width: 60px;
-  opacity: 0;
+  // opacity: 0;
 }

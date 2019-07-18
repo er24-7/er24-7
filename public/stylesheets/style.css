@@ -190,6 +190,9 @@ nav {
   margin: 0;
   background-color: #f368689f; }
 
+.each-slot:focus, .each-slot:active {
+  background-color: black; }
+
 .message {
   color: white;
   padding-right: 10px;
@@ -385,7 +388,7 @@ nav {
   flex-direction: column;
   text-align: left;
   width: 350px;
-  max-height: 500px; }
+  height: 500px; }
 
 #employee-list .submit-button {
   width: fit-content;
@@ -439,7 +442,6 @@ nav {
 
 .each-slot input {
   height: 60px;
-  width: 60px;
-  opacity: 0; }
+  width: 60px; }
 
 /*# sourceMappingURL=style.css.map */
