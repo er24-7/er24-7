@@ -15,6 +15,7 @@ const shiftSchema = new Schema({
       "sa1", "sa2", "sa3",
     ]
   }]
+  // codes: [{ type: String }]
 
 })
 
