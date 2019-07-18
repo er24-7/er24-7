@@ -7,6 +7,9 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/test', (req, res, next) => {
+  res.send(req.session.passport.user)
+})
 
 router.post('/to-department', (req, res, next) => {
   User.findById(req.user.id).populate('department')

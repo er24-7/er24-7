@@ -22,17 +22,21 @@
         <div>
           <label>Department: </label>
           <select name="department">
-            <option>Select Later</option>
+            {{!-- <option value="{{user.department._id}}" selected="selected">{{user.department.name}}</option> --}}
             {{#each departments}}
+            {{#if this.correctDepartment}}
+            <option value="{{this._id}}" selected="selected">{{this.name}} </option>
+            {{else}}
             <option value="{{this._id}}">{{this.name}}</option>
+            {{/if}}
             {{/each}}
           </select>
         </div>
         <div>
           <label>Role: </label>
           <select name="role">
-            <option value="EMP">Employee</option>
-            <option value="MAN">Manager</option>
+            <option value="EMPLOYEE">Employee</option>
+            <option value="MANAGER">Manager</option>
           </select>
         </div>
         <button class="submit-button">UPDATE</button>
