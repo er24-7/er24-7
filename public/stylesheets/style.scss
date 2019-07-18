@@ -30,7 +30,7 @@ nav {
   display: flex;
   justify-content: space-between;
   line-height: 90px;
-  background-color: rgba(236, 236, 236, 0.596);
+  background-color: #6b6b6b4d;
 }
 
 .go-back-btn {
@@ -104,7 +104,6 @@ nav {
   margin-left: 2rem;
   width: 146.3px;
   border-bottom: 6px solid #e73617af;
-  color: #505050;
   height: 68.8px;
   font-size: 3.3rem;
   font-weight: 600;
@@ -120,8 +119,7 @@ nav {
 }
 
 .logo:hover {
-  color: black;
-  border-bottom: 4px solid rgb(175, 54, 33);
+  border-bottom: 6px solid rgb(175, 54, 33);
   transition: all .8s;
 }
 
@@ -216,22 +214,35 @@ nav {
   margin: 0;
 }
 
-
 .each-slot {
+  box-sizing: border-box;
+  border-radius: 8px;
   width: 60px;
   height: 60px;
-  outline: 2px solid rgb(78, 78, 78);
   margin: 0;
-  background-color: #f368689f;
+  border: 2px solid #808080;
 }
 
-.each-slot:focus, .each-slot:active {
-  background-color: black;
+.each-slot-1:hover {
+  border: 2px solid #ffd900;
+  background-color: #ffd9004d;
 }
 
-// .each-slot:hover {
-//   background-color: #414141;
-// }
+.each-slot-2:hover {
+  border: 2px solid #20a0eb;
+  background-color: #20a1eb52;
+  
+}
+
+.each-slot-3:hover {
+  border: 2px solid #263277;
+  background-color: #2632775e;
+
+}
+
+.selected {
+  background-color: #f36868c5;
+}
 
 .message {
   color: white;
@@ -261,12 +272,12 @@ nav {
   flex-direction: column;
   padding: 10px;
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #b4b4b4;
+  border-radius: 15px;
+  border: 4px solid #afafaf;
 }
 
 .each-department:hover {
-  box-shadow: 10px 10px 10px #000000;
+  border: 4px solid #808080;
 }
 
 .each-department a:first-child {
@@ -453,9 +464,11 @@ nav {
 
 .spread-stuff > *, .center-stuff > * {
   // border: 1px solid black;
-  background-color: #f0f0f0;
+  // background-color: #f0f0f0;
   padding: 50px 40px;
-  box-shadow: 5px 5px 5px rgb(161, 161, 161);
+  border-radius: 28px;
+  border: 5px solid #afafaf;
+  // box-shadow: 5px 5px 5px rgb(161, 161, 161);
 }
 
 .submit-button {
@@ -478,7 +491,7 @@ nav {
   flex-direction: column;
 }
 
-#employee-list, #shifts-list, .shifts-list {
+#employee-list, #shifts-list, .shifts-list, #dept-list {
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -551,5 +564,5 @@ nav {
 .each-slot input {
   height: 60px;
   width: 60px;
-  // opacity: 0;
+  opacity: 0;
 }

@@ -1,14 +1,25 @@
+<a class="go-back" href="/departments"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
 <section class="container">
-  <h2>Create Department Page </h2>
-
-  <form action="/departments/create" method="POST">
-    <label>Name</label>
-    <input type="text" name="name">
-
-    <button>Submit</button>
-  </form>
-
-  <h6>
-    <a href="/departments">Go Back</a>
-  </h6>
+  <div class="spread-stuff">
+    <form action="/departments/create" method="POST">
+      <div>
+        <label>Department name: </label>
+        <input type="text" name="name">
+      </div>
+      <br>
+      <button class="submit-button">CREATE</button>
+    </form>
+      <div id="dept-list">
+        <p>test123</p>
+        {{#each departments}}
+          <a href="/users/show/{{this._id}}">
+            {{this.name}}
+          </a>
+          <a class="submit-button" href="/departments/edit/{{this._id}}">EDIT</a>
+          <br>
+        {{/each}}
+      </div>
+  </div>
+  <div class="side-bar">
+  </div>
 </section>
