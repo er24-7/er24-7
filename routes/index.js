@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 router.post('/to-department', (req, res, next) => {
   User.findById(req.user.id).populate('department')
     .then((theUser) => {
-      if (req.user.role == "ADM") {
+      if (req.user.role == "ADMIN") {
         res.redirect('/departments')
       } else {
         res.redirect('/departments/' + theUser.department.name)
