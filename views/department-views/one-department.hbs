@@ -10,14 +10,18 @@
     </div>
   </div>
   <div class="side-bar">
-    <div>
-      <a class="btn create-button" href="/departments/{{department.name}}/edit">EDIT DEPARTMENT</a>
-    </div>
+    {{#if isAdmin}}
     <div>
       <a class="btn create-button" href="/auth/create">NEW EMPLOYEE</a>
     </div>
     <div>
+      <a class="btn create-button" href="/departments/{{department.name}}/edit">EDIT DEPARTMENT</a>
+    </div>
+    {{/if}}
+    {{!-- {{#if isManagerOrAdmin}} --}}
+    <div>
       <a class="btn create-button" href="/shifts/{{department.name}}">SHIFTS</a>
     </div>
+    {{!-- {{/if}} --}}
   </div>
 </section>
