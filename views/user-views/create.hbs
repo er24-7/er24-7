@@ -1,7 +1,7 @@
 <a class="go-back" href="/departments"><img src="/images/left-arrow.svg" class="go-back-btn"></a>
 <section class="container">
   <div class="spread-stuff">
-    <form action="/users/create" method="POST">
+    <form action="/auth/create" method="POST">
       <div>
         <label>First Name: </label>
         <input type="text" name="firstName">
@@ -26,29 +26,30 @@
         <label>Department: </label>
         <select name="department">
           {{#each departments}}
-            <option value="{{this._id}}">{{this.name}}</option>
+          <option value="{{this._id}}">{{this.name}}</option>
           {{/each}}
         </select>
       </div>
       <div>
         <label>Role: </label>
         <select name="role">
-          <option value="EMP">Employee</option>
-          <option value="MAN">Manager</option>
+          <option value="EMPLOYEE">Employee</option>
+          <option value="MANAGER">Manager</option>
+          <option value="ADMIN">Admin</option>
         </select>
       </div>
 
       <button class="submit-button">CREATE</button>
     </form>
-      <div id="employee-list">
-        {{#each users}}
-          <a href="/users/show/{{this._id}}">
-            {{this.firstName}} {{this.lastName}}
-          </a>
-          <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
-          <br>
-        {{/each}}
-      </div>
+    <div id="employee-list">
+      {{#each users}}
+      <a href="/users/show/{{this._id}}">
+        {{this.firstName}} {{this.lastName}}
+      </a>
+      <a class="submit-button" href="/users/edit/{{this._id}}">EDIT</a>
+      <br>
+      {{/each}}
+    </div>
   </div>
   <div class="side-bar">
   </div>

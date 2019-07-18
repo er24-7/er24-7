@@ -3,7 +3,20 @@ const router = express.Router();
 const User = require('../models/User')
 const Department = require('../models/Department')
 
-router.get('/', (req, res, render) => {
+function checkRoles(role) {
+  return function (req, res, next) {
+    if (req.isAuthenticated() && req.user.role === role) {
+      return next();
+    } else {
+      req.flash('error', 'you need to be an admin for that')
+      res.redirect('/auth/login')
+    }
+  }
+}
+
+const checkAdmin = checkRoles('ADMIN');
+
+router.get('/', checkAdmin, (req, res, render) => {
   Department.find()
     .then((allDepartments) => {
       res.render('department-views/all-departments', { departments: allDepartments })
@@ -14,11 +27,11 @@ router.get('/', (req, res, render) => {
 
 })
 
-router.get('/create', (req, res, render) => {
+router.get('/create', checkAdmin, (req, res, render) => {
   res.render('department-views/create-department')
 })
 
-router.post('/create', (req, res, render) => {
+router.post('/create', checkAdmin, (req, res, render) => {
   Department.create(req.body)
     .then(() => {
       req.flash('success', 'Department successfully created')
@@ -32,7 +45,7 @@ router.post('/create', (req, res, render) => {
     })
 })
 
-router.get('/:deptName', (req, res, render) => {
+router.get('/:deptName', checkAdmin, (req, res, render) => {
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
       User.find({ department: theDepartment._id })
@@ -48,7 +61,7 @@ router.get('/:deptName', (req, res, render) => {
     })
 })
 
-router.get('/:deptName/edit', (req, res, render) => {
+router.get('/:deptName/edit', checkAdmin, (req, res, render) => {
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
       res.render('department-views/edit-one-department', { department: theDepartment })
@@ -58,7 +71,7 @@ router.get('/:deptName/edit', (req, res, render) => {
     })
 })
 
-router.post('/:deptName/update', (req, res, render) => {
+router.post('/:deptName/update', checkAdmin, (req, res, render) => {
   Department.findOneAndUpdate({ name: req.params.deptName }, req.body)
     .then(() => {
       req.flash('success', 'Department successfully updated')
@@ -69,7 +82,7 @@ router.post('/:deptName/update', (req, res, render) => {
     })
 })
 
-router.post('/:deptName/delete', (req, res, render) => {
+router.post('/:deptName/delete', checkAdmin, (req, res, render) => {
   Department.findOneAndDelete({ name: req.params.deptName })
     .then(() => {
       req.flash('success', 'Department successfully delete')
