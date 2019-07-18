@@ -78,6 +78,29 @@ router.post('/:deptName/create', (req, res, next) => {
             }
           }
         }
+
+
+        let theDaySorter = {
+          su: 1,
+          mo: 2,
+          tu: 3,
+          we: 4,
+          th: 5,
+          fr: 6,
+          sa: 7
+        }
+
+        theUpdatedShifts.sort((a, b) => {
+          if (theDaySorter[a.slice(0, 2)] > theDaySorter[b.slice(0, 2)]) {
+            return 1;
+          } else if (theDaySorter[a.slice(0, 2)] < theDaySorter[b.slice(0, 2)]) {
+            return -1;
+          } else if (a.slice(2) < b.slice(2)) {
+            return -1;
+          } else {
+            return 1;
+          }
+        })
         Shifts.findByIdAndUpdate(theCreatedShift.id, {
           assigned: req.body.assigned,
           codes: theUpdatedShifts
