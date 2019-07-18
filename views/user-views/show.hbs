@@ -1,20 +1,19 @@
+<a class="go-back" href="/"><span class="arrow">⇦</span><span class="previous-page"> </span></a>
 <section class="container">
-  <h2>{{user.firstName}} {{user.lastName}}</h2>
-
-
-  <ul>
-    <li>Email: {{user.email}}</li>
-    <li>Phone: {{user.phone}}</li>
-    <li>Department: {{user.department.name}}</li>
-    <li>Role: {{user.role}}</li>
-  </ul>
-
-  {{#if canEdit}}
-  <a href="/users/edit/{{user._id}}">Edit Employee</a>
-  {{/if}}
-
-
-  <h6>
-    <a href="/departments/{{user.department.name}}">Go Back</a>
-  </h6>
+  <div class="center-stuff">
+    <div class="you">
+    <p>{{user.firstName}} {{user.lastName}}</p>
+    <ul>
+      <li><span class="manager-bold">E-mail:</span> {{user.email}}</li>
+      <li><span class="manager-bold">Phone number:</span> {{user.phone}}</li>
+      <li><span class="manager-bold">Department:</span> {{user.department.name}}</li>
+      <li><span class="manager-bold">Role:</span> {{user.role}}</li>
+    </ul>
+    </div>
+  </div>
+  <div class="side-bar">
+    {{#if canEdit}}
+      <a class="btn create-button" href="/users/edit/{{user._id}}">UPDATE INFORMATION</a>
+    {{/if}}
+  </div>
 </section>

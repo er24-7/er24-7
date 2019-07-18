@@ -185,6 +185,16 @@ nav {
 .manager-bold {
   font-weight: 500; }
 
+.you p {
+  font-size: 2.5rem;
+  margin: 1rem;
+  text-align: center; }
+
+.you ul {
+  list-style: none;
+  text-align: left;
+  width: 500px; }
+
 .btn {
   padding: 0 .1rem;
   border: none;
