@@ -277,6 +277,7 @@ nav {
   height: 36.3px; }
 
 .go-back:hover {
+  cursor: pointer;
   width: 159px;
   background-color: #ff8d79;
   transition: all .1s; }
@@ -315,7 +316,7 @@ nav {
   height: 100vh; }
 
 .land-style-3 {
-  background-image: linear-gradient(-127deg, transparent 66%, #e736170a 73%), linear-gradient(-130deg, transparent 66%, #e736170a 73%), linear-gradient(-133deg, transparent 66%, #e736170a 73%), linear-gradient(-136deg, transparent 66%, #e736170a 73%), linear-gradient(-139deg, transparent 66%, #e736170a 73%), linear-gradient(-142deg, transparent 66%, #e736170a 73%), linear-gradient(-145deg, transparent 66%, #e736170a 73%), linear-gradient(-148deg, transparent 66%, #e736170a 73%), linear-gradient(-151deg, transparent 66%, #e736170a 73%), linear-gradient(-154deg, transparent 66%, #e736170a 73%), linear-gradient(-157deg, transparent 66%, #e736170a 73%), linear-gradient(-160deg, transparent 66%, #e736170a 73%), linear-gradient(-163deg, transparent 66%, #e736170a 73%); }
+  background-image: linear-gradient(-127deg, transparent 66%, #e736170a 73%), linear-gradient(-130deg, transparent 66%, #e736170a 73%), linear-gradient(-133deg, transparent 66%, #e736170a 73%), linear-gradient(-136deg, transparent 66%, #e736170a 73%), linear-gradient(-139deg, transparent 66%, #e736170a 73%), linear-gradient(-142deg, transparent 66%, #e736170a 73%), linear-gradient(-145deg, transparent 66%, #e736170a 73%), linear-gradient(-148deg, transparent 66%, #e736170a 73%), linear-gradient(-151deg, transparent 66%, #e736170a 73%), linear-gradient(-154deg, transparent 66%, #e736170a 73%), linear-gradient(-157deg, transparent 66%, #e736170a 73%), linear-gradient(-160deg, transparent 66%, #e736170a 73%), linear-gradient(-163deg, transparent 66%, #e736170a 73%), linear-gradient(-166deg, transparent 66%, #e736170a 73%), linear-gradient(-169deg, transparent 66%, #e736170a 73%), linear-gradient(-172deg, transparent 66%, #e736170a 73%), linear-gradient(-175deg, transparent 66%, #e736170a 73%), linear-gradient(-178deg, transparent 66%, #e736170a 73%), linear-gradient(-181deg, transparent 66%, #e736170a 73%), linear-gradient(-184deg, transparent 66%, #e736170a 73%), linear-gradient(-187deg, transparent 66%, #e736170a 73%), linear-gradient(-190deg, transparent 66%, #e736170a 73%), linear-gradient(-193deg, transparent 66%, #e736170a 73%), linear-gradient(-196deg, transparent 66%, #e736170a 73%), linear-gradient(-199deg, transparent 66%, #e736170a 73%), linear-gradient(-202deg, transparent 66%, #e736170a 73%); }
 
 .land-style-2 {
   height: 100vh;
