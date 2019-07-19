@@ -33,6 +33,7 @@
     </form>
     {{/if}}
     <div id="shifts-list">
+      {{#if isManagerOrAdmin}}
       {{#each shifts}}
       <b><a href="/users/show/{{this.assigned._id}}">{{this.assigned.firstName}} {{this.assigned.lastName}}</a></b>
       {{#each this.codes}}
@@ -43,6 +44,15 @@
       </form>
       <br>
       {{/each}}
+      {{else}}
+      {{#each shifts}}
+      <b><a href="/users/show/{{this.assigned._id}}">{{this.assigned.firstName}} {{this.assigned.lastName}}</a></b>
+      {{#each this.codes}}
+      <p>{{this}}</p>
+      {{/each}}
+      <br>
+      {{/each}}
+      {{/if}}
     </div>
   </div>
   <div class="side-bar">
