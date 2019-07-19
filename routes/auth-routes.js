@@ -74,9 +74,14 @@ router.post('/login', function (req, res, next) {
   passport.authenticate('local', function (err, user, info) {
     if (err) { return next(err); }
     // Redirect if it fails
-    if (!user) { return res.redirect('/auth/login'); }
+    if (!user) {
+      req.flash('error', 'Username or Password is incorrect.  Please try again')
+      return res.redirect('/auth/login');
+    }
     req.logIn(user, function (err) {
-      if (err) { return next(err); }
+      if (err) {
+        return next(err);
+      }
       return res.redirect('/users/')
     });
   })(req, res, next);

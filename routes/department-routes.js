@@ -94,12 +94,15 @@ router.get('/:deptName/edit', checkAdminOrManager, (req, res, render) => {
 })
 
 router.post('/:deptName/update', (req, res, render) => {
+  console.log(req.body.name)
   Department.findOneAndUpdate({ name: req.params.deptName }, req.body)
     .then(() => {
+      console.log('it did work-=-=-=-=-')
       req.flash('success', 'Department successfully updated')
-      res.redirect('/departments/' + req.params.deptName)
+      res.redirect('/departments/' + req.body.name)
     })
     .catch((err) => {
+      console.log(err)
       next(err)
     })
 })

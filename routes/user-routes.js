@@ -103,8 +103,13 @@ router.get('/edit/:id', ensureAuthenticated, (req, res, next) => {
               eachDepartment.correctDepartment = true;
             }
           })
+          let isMine = theUser._id.equals(req.user._id);
+          let canEdit;
+          if (isMine || req.user.role === "ADMIN") {
+            canEdit = true;
+          }
           // res.send(allDepartments);
-          res.render('user-views/edit', { user: theUser, departments: allDepartments })
+          res.render('user-views/edit', { user: theUser, departments: allDepartments, canEdit })
         })
         .catch((err) => {
           next(err)
