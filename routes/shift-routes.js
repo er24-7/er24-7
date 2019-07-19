@@ -34,7 +34,7 @@ router.get('/:deptName', (req, res, next) => {
                 })
               })
               // console.log(allShiftsWithinDepartment)
-              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment });
+              res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment.reverse() });
             })
             .catch((err) => {
               next(err)
