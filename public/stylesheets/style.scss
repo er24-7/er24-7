@@ -352,6 +352,8 @@ nav {
     position: relative;
     top: -2px;
     content: "previous page";
+    animation-name: show;
+    animation-duration: .2s;
   }
   .arrow {
     position: relative;
@@ -362,6 +364,15 @@ nav {
   width: 159px;
   background-color: #ff8d79;
   transition: all .1s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes bounce {
