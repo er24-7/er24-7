@@ -331,23 +331,8 @@ nav {
   height: 36.3px;
 }
 
-// .go-back {
-//   position: absolute;
-//   top: 95px;
-//   margin: 0;
-//   font-size: 1.3rem;
-//   color: white;
-//   left: 20px;
-//   width: 37.8px;
-//   background-color: #ff7158b3;
-//   border-radius: 16px;
-//   padding-left: 0.8rem;
-//   line-height: 36.3px;
-//   height: 34.3px;
-// }
-
-
 .go-back:hover {
+  cursor: pointer;
   .previous-page:after {
     position: relative;
     top: -2px;
@@ -414,7 +399,20 @@ nav {
   linear-gradient(-154deg, transparent 66%, #e736170a 73%),
   linear-gradient(-157deg, transparent 66%, #e736170a 73%),
   linear-gradient(-160deg, transparent 66%, #e736170a 73%),
-  linear-gradient(-163deg, transparent 66%, #e736170a 73%);
+  linear-gradient(-163deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-166deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-169deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-172deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-175deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-178deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-181deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-184deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-187deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-190deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-193deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-196deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-199deg, transparent 66%, #e736170a 73%),
+  linear-gradient(-202deg, transparent 66%, #e736170a 73%);
 }
 
 .land-style-2 {

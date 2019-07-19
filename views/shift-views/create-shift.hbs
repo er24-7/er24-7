@@ -43,10 +43,15 @@
     </div>
   </div>
   <div class="side-bar">
+    {{#if isAdmin}}
+      <div>
+        <a target="_blank" class="btn create-button" href="/auth/create">NEW EMPLOYEE</a>
+      </div>
+    {{/if}}
     {{#if isManagerOrAdmin}}
-    <form action="/shifts/{{department.name}}/delete/all" method="POST">
-      <button class="clear-button">CLEAR ALL SHIFTS</button>
-    </form>
+      <form action="/shifts/{{department.name}}/delete/all" method="POST">
+        <button class="clear-button">CLEAR ALL SHIFTS</button>
+      </form>
     {{/if}}
   </div>
 </section>
