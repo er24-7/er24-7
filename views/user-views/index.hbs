@@ -40,16 +40,16 @@
                 </a>
             </li>
 
-            {{!-- <li>
-            {{#unless isManagerOrAdmin}}
+            <li>
+              {{#unless isManagerOrAdmin}}
               <span class="cross-through gray">
-            {{/unless}}
-            {{#if isManagerOrAdmin}}
-              <a href="/departments">
-            {{/if}}
-                edit a department
-              </a>
-            </li> --}}
+                {{/unless}}
+                {{#if isManagerOrAdmin}}
+                <a href="/departments">
+                  {{/if}}
+                  edit a department
+                </a>
+            </li>
 
             <li>
               {{#unless isManagerOrAdmin}}

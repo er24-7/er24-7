@@ -39,6 +39,9 @@
       <p>{{this}}</p>
       {{/each}}
       <br>
+      <form action="/shifts/delete/{{this._id}}">
+        <button>Remove</button>
+      </form>
       {{/each}}
     </div>
   </div>
