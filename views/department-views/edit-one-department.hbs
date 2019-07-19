@@ -1,13 +1,17 @@
 <section class="container">
   <div class="center-stuff">
+
+
     <form class="edit-dept-title" action="/departments/{{department.name}}/update" method="POST">
-    <p>{{department.name}}</p>
-    <div>
-      <label>New department name:</label>
-      <input type="text" value="{{department.name}}">
-    </div>
+      <p>{{department.name}}</p>
+      <div>
+        <label>New department name:</label>
+        <input type="text" name="name" value="{{department.name}}">
+      </div>
       <button class="submit-button">UPDATE</button>
     </form>
+
+
   </div>
   <div class="side-bar">
   </div>
