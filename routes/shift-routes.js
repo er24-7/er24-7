@@ -20,7 +20,6 @@ router.get('/:deptName', (req, res, next) => {
   let theShift = ['9am-5pm', '5pm-1am', '1am-9am']
   Department.findOne({ name: req.params.deptName })
     .then((theDepartment) => {
-      // res.send(theDepartment._id)
       User.find({ department: theDepartment._id }).populate("shifts")
         .then((allUsers) => {
           Shifts.find({ assigned: allUsers }).populate('assigned')
@@ -33,7 +32,6 @@ router.get('/:deptName', (req, res, next) => {
                   return (`${theDays[sec1]}, ${theShift[sec2 - 1]}`)
                 })
               })
-              // console.log(allShiftsWithinDepartment)
               res.render('shift-views/create-shift', { users: allUsers, department: theDepartment, shifts: allShiftsWithinDepartment.reverse() });
             })
             .catch((err) => {
@@ -47,7 +45,6 @@ router.get('/:deptName', (req, res, next) => {
     .catch((err) => {
       next(err)
     })
-  // res.send(moment())
 });
 
 router.post('/:deptName/create', (req, res, next) => {
@@ -62,7 +59,6 @@ router.post('/:deptName/create', (req, res, next) => {
           .catch(() => {
             req.flash('error', 'code incorrect')
             res.redirect('/shifts/' + req.params.deptName)
-
           })
       } else {
         let theUpdatedShifts = theCreatedShift.codes;
@@ -78,8 +74,6 @@ router.post('/:deptName/create', (req, res, next) => {
             }
           }
         }
-
-
         let theDaySorter = {
           su: 1,
           mo: 2,
@@ -89,7 +83,6 @@ router.post('/:deptName/create', (req, res, next) => {
           fr: 6,
           sa: 7
         }
-
         theUpdatedShifts.sort((a, b) => {
           if (theDaySorter[a.slice(0, 2)] > theDaySorter[b.slice(0, 2)]) {
             return 1;

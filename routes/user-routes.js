@@ -104,8 +104,8 @@ router.get('/edit/:id', ensureAuthenticated, (req, res, next) => {
             }
           })
           let isMine = theUser._id.equals(req.user._id);
-          let canEdit;
-          if (isMine || req.user.role === "ADMIN") {
+          let canEdit = false;
+          if (isMine && req.user.role === "ADMIN") {
             canEdit = true;
           }
           // res.send(allDepartments);

@@ -39,7 +39,7 @@
           <select name="role">
             <option value="EMPLOYEE">Employee</option>
             <option value="MANAGER">Manager</option>
-            <option value="ADMIN" {{#if isAdmin}}selected="selected" {{/if}}>Admin</option>
+            <option value="ADMIN" {{#if canEdit}}selected="selected" {{/if}}>Admin</option>
           </select>
         </div>
         {{/if}}
