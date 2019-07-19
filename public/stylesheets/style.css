@@ -487,4 +487,8 @@ nav {
 .cross-through {
   text-decoration: line-through; }
 
+.delete-shift-button {
+  font-size: 0.7rem;
+  font-weight: 800; }
+
 /*# sourceMappingURL=style.css.map */
