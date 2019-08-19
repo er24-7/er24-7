@@ -55,9 +55,11 @@
       <p><span class="emp-formatting">Phone number: </span>{{user.phone}}</p>
       <p><span class="emp-formatting">Department: </span>{{user.department.name}}</p>
       <p><span class="emp-formatting">Role: </span>{{user.role}}</p>
+      {{#if isAdmin}}
       <form action="/users/delete/{{user._id}}" method="POST">
         <button class="submit-button">DELETE</button>
       </form>
+      {{/if}}
     </div>
   </div>
   <div class="side-bar">
